@@ -1,10 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
+import { Locale } from '@/i18n/types';
+import { getDictionary } from '@/i18n';
 
 interface ServicesHeroProps {
-  title: string;
-  eyebrow: string;
-  statement?: string;
+  lang: Locale;
+  pageId: 'services' | 'electrical' | 'mechanical' | 'finishing';
   images: {
     src: string;
     alt?: string;
@@ -12,7 +13,24 @@ interface ServicesHeroProps {
   }[];
 }
 
-export default function ServicesHero({ title, eyebrow, statement, images }: ServicesHeroProps) {
+export default function ServicesHero({ lang, pageId, images }: ServicesHeroProps) {
+  const dict = getDictionary(lang);
+  let title = '';
+  let statement = '';
+
+  if (pageId === 'services') {
+    title = dict.nav.services;
+    statement = 'Mühendislik, proje ve uygulama süreçlerine bütüncül yaklaşım.'; // fallback TR for now, but I should translate this
+    if (lang === 'en') statement = 'A holistic approach to engineering, project, and implementation processes.';
+    if (lang === 'ru') statement = 'Комплексный подход к инженерным, проектным и прикладным процессам.';
+  } else if (pageId === 'electrical') {
+    title = dict.services.categories.electrical.title;
+  } else if (pageId === 'mechanical') {
+    title = dict.services.categories.mechanical.title;
+  } else if (pageId === 'finishing') {
+    title = dict.services.categories.finishing.title;
+  }
+
   return (
     <section className="relative w-full h-[40vh] md:h-[46vh] flex overflow-hidden shrink-0 bg-[var(--color-charcoal)]">
       {/* Background Composition */}
@@ -47,9 +65,9 @@ export default function ServicesHero({ title, eyebrow, statement, images }: Serv
       {/* Content */}
       <div className="relative z-20 flex flex-col justify-end px-6 md:px-12 lg:px-20 2xl:px-32 pb-12 w-full max-w-[1440px] mx-auto h-full">
         <div className="text-[12px] md:text-sm font-semibold tracking-[0.2em] text-[var(--color-bodrum-blue-light)] uppercase mb-4">
-          {eyebrow}
+          {dict.home.hero.title}
         </div>
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight font-heading mb-4 max-w-4xl">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight font-heading mb-4 max-w-4xl uppercase">
           {title}
         </h1>
         {statement && (

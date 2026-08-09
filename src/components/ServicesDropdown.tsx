@@ -1,14 +1,19 @@
 "use client";
 import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { Locale } from '@/i18n/types';
+import { getDictionary } from '@/i18n';
+import { routeMap } from '@/i18n/routes';
 
 interface ServicesDropdownProps {
   isOpen: boolean;
   onClose: () => void;
+  lang: Locale;
 }
 
-export default function ServicesDropdown({ isOpen, onClose }: ServicesDropdownProps) {
+export default function ServicesDropdown({ isOpen, onClose, lang }: ServicesDropdownProps) {
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const dict = getDictionary(lang);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -28,19 +33,19 @@ export default function ServicesDropdown({ isOpen, onClose }: ServicesDropdownPr
 
   const services = [
     {
-      title: 'ELEKTRİK SİSTEMLERİ',
-      href: '/elektrik-sistemleri',
-      description: 'Elektrik uygulamaları'
+      title: dict.nav.serviceDropdown.electrical,
+      href: routeMap.electrical[lang],
+      description: dict.about.expertise.electroMechanical
     },
     {
-      title: 'MEKANİK SİSTEMLER',
-      href: '/mekanik-sistemler',
-      description: 'Mekanik uygulamalar'
+      title: dict.nav.serviceDropdown.mechanical,
+      href: routeMap.mechanical[lang],
+      description: dict.about.expertise.electroMechanical
     },
     {
-      title: 'İNCE İŞLER',
-      href: '/ince-isler',
-      description: 'Dekorasyon — Renovasyon'
+      title: dict.nav.serviceDropdown.finishing,
+      href: routeMap.finishing[lang],
+      description: dict.about.expertise.decoration
     }
   ];
 
@@ -63,7 +68,7 @@ export default function ServicesDropdown({ isOpen, onClose }: ServicesDropdownPr
                 onClick={onClose}
                 className="group flex flex-col items-start p-4 -ml-4 hover:bg-[var(--color-light-gray)] rounded transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue)]"
               >
-                <h3 className="text-sm lg:text-base font-bold text-[var(--color-charcoal)] group-hover:text-[var(--color-bodrum-blue)] transition-colors duration-300 mb-1">
+                <h3 className="text-sm lg:text-base font-bold text-[var(--color-charcoal)] group-hover:text-[var(--color-bodrum-blue)] transition-colors duration-300 mb-1 uppercase">
                   {service.title}
                 </h3>
                 <p className="text-xs lg:text-sm text-[var(--color-graphite)]/80 group-hover:text-[var(--color-graphite)] transition-colors duration-300">
@@ -75,11 +80,11 @@ export default function ServicesDropdown({ isOpen, onClose }: ServicesDropdownPr
 
           <div className="flex flex-col md:items-end justify-center pt-8 md:pt-0 border-t md:border-t-0 border-[var(--color-medium-gray)] md:border-l md:pl-16">
             <Link
-              href="/hizmetlerimiz"
+              href={routeMap.services[lang]}
               onClick={onClose}
               className="group inline-flex items-center text-xs lg:text-sm font-semibold tracking-widest text-[var(--color-charcoal)] hover:text-[var(--color-bodrum-blue)] transition-colors duration-300 uppercase focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue)] p-2 -ml-2 md:ml-0"
             >
-              TÜM HİZMETLER
+              {dict.common.all}
               <span className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
             </Link>
           </div>

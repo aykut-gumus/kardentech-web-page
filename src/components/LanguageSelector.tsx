@@ -1,4 +1,10 @@
+"use client";
+
 import React from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { Locale } from '@/i18n/types';
+import { getLocalizedUrl } from '@/i18n/routes';
 
 const TrFlag = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80" className="w-[18px] h-[13px] rounded-sm shadow-sm overflow-hidden">
@@ -35,21 +41,44 @@ const RuFlag = () => (
   </svg>
 );
 
-export default function LanguageSelector() {
+export default function LanguageSelector({ currentLang }: { currentLang: Locale }) {
+  const pathname = usePathname();
+
+  const handleStoreLocale = (locale: Locale) => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('kardentech-locale', locale);
+    }
+  };
+
   return (
     <div className="flex gap-5 items-center">
-      <button className="flex flex-col items-center gap-[3px] opacity-75 hover:opacity-100 transition-opacity">
+      <Link 
+        href={getLocalizedUrl(pathname, 'tr')}
+        onClick={() => handleStoreLocale('tr')}
+        aria-current={currentLang === 'tr' ? 'true' : 'false'}
+        className={`flex flex-col items-center gap-[3px] transition-opacity cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-sm p-1 -m-1 ${currentLang === 'tr' ? 'opacity-100' : 'opacity-60 hover:opacity-100'}`}
+      >
         <TrFlag />
         <span className="text-[9px] font-semibold leading-none tracking-widest text-white/90">TR</span>
-      </button>
-      <button className="flex flex-col items-center gap-[3px] opacity-75 hover:opacity-100 transition-opacity">
+      </Link>
+      <Link 
+        href={getLocalizedUrl(pathname, 'en')}
+        onClick={() => handleStoreLocale('en')}
+        aria-current={currentLang === 'en' ? 'true' : 'false'}
+        className={`flex flex-col items-center gap-[3px] transition-opacity cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-sm p-1 -m-1 ${currentLang === 'en' ? 'opacity-100' : 'opacity-60 hover:opacity-100'}`}
+      >
         <EnFlag />
         <span className="text-[9px] font-semibold leading-none tracking-widest text-white/90">EN</span>
-      </button>
-      <button className="flex flex-col items-center gap-[3px] opacity-75 hover:opacity-100 transition-opacity">
+      </Link>
+      <Link 
+        href={getLocalizedUrl(pathname, 'ru')}
+        onClick={() => handleStoreLocale('ru')}
+        aria-current={currentLang === 'ru' ? 'true' : 'false'}
+        className={`flex flex-col items-center gap-[3px] transition-opacity cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-sm p-1 -m-1 ${currentLang === 'ru' ? 'opacity-100' : 'opacity-60 hover:opacity-100'}`}
+      >
         <RuFlag />
         <span className="text-[9px] font-semibold leading-none tracking-widest text-white/90">RU</span>
-      </button>
+      </Link>
     </div>
   );
 }

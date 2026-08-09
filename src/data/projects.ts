@@ -1,21 +1,29 @@
+import { Locale } from '@/i18n/types';
+
 export type ProjectCategory = 'Konut' | 'Otel' | 'Ticari / Showroom' | 'Endüstriyel';
+
+export type LocalizedText = Record<Locale, string>;
 
 export type Project = {
   id: string;
   slug: string;
-  title: string;
+  title: LocalizedText;
   category: ProjectCategory;
   coverImage: string;
   images: string[];
-  summary?: string;
-  location?: string;
+  summary?: LocalizedText;
+  location?: LocalizedText;
 };
 
 export const projects: Project[] = [
   {
     id: 'quadro-villalari',
     slug: 'quadro-villalari',
-    title: 'Quadro Villaları',
+    title: {
+      tr: 'Quadro Villaları',
+      en: 'Quadro Villas',
+      ru: 'Виллы Quadro'
+    },
     category: 'Konut',
     coverImage: '/images/projects/quadro-villalari/01.jpg',
     images: [
@@ -27,12 +35,20 @@ export const projects: Project[] = [
       '/images/projects/quadro-villalari/06.jpg',
       '/images/projects/quadro-villalari/07.jpg',
     ],
-    summary: 'Kardentech Mühendislik\'in görev aldığı Quadro Villaları projesinden seçkiler.',
+    summary: {
+      tr: 'Kardentech Mühendislik\'in görev aldığı Quadro Villaları projesinden seçkiler.',
+      en: 'Selections from the Quadro Villas project in which Kardentech Engineering was involved.',
+      ru: 'Избранное из проекта Виллы Quadro, в котором принимала участие компания Kardentech Engineering.'
+    },
   },
   {
     id: 'mercedes-benz-hasmer',
     slug: 'mercedes-benz-hasmer',
-    title: 'Mercedes Benz Hasmer',
+    title: {
+      tr: 'Mercedes Benz Hasmer',
+      en: 'Mercedes Benz Hasmer',
+      ru: 'Mercedes Benz Hasmer'
+    },
     category: 'Ticari / Showroom',
     coverImage: '/images/projects/mercedes-benz-hasmer/01.jpg',
     images: [
@@ -46,12 +62,20 @@ export const projects: Project[] = [
       '/images/projects/mercedes-benz-hasmer/08.jpg',
       '/images/projects/mercedes-benz-hasmer/09.jpg',
     ],
-    summary: 'Kardentech Mühendislik\'in görev aldığı Mercedes-Benz Hasmer Antalya projesinden seçkiler.',
+    summary: {
+      tr: 'Kardentech Mühendislik\'in görev aldığı Mercedes-Benz Hasmer Antalya projesinden seçkiler.',
+      en: 'Selections from the Mercedes-Benz Hasmer Antalya project in which Kardentech Engineering was involved.',
+      ru: 'Избранное из проекта Mercedes-Benz Hasmer Antalya, в котором принимала участие компания Kardentech Engineering.'
+    },
   },
   {
     id: 'suyali-yalikavak',
     slug: 'suyali-yalikavak',
-    title: 'Suyalı Yalıkavak',
+    title: {
+      tr: 'Suyalı Yalıkavak',
+      en: 'Suyalı Yalıkavak',
+      ru: 'Suyalı Yalıkavak'
+    },
     category: 'Konut',
     coverImage: '/images/projects/suyali-yalikavak/02.jpg',
     images: [
@@ -62,12 +86,20 @@ export const projects: Project[] = [
       '/images/projects/suyali-yalikavak/05.jpg',
       '/images/projects/suyali-yalikavak/06.jpg',
     ],
-    summary: 'Kardentech Mühendislik\'in görev aldığı Suyalı Yalıkavak projesinden seçkiler.',
+    summary: {
+      tr: 'Kardentech Mühendislik\'in görev aldığı Suyalı Yalıkavak projesinden seçkiler.',
+      en: 'Selections from the Suyalı Yalıkavak project in which Kardentech Engineering was involved.',
+      ru: 'Избранное из проекта Suyalı Yalıkavak, в котором принимала участие компания Kardentech Engineering.'
+    },
   },
   {
     id: 'y-uzun-homes',
     slug: 'y-uzun-homes',
-    title: 'Y. Uzun Home\'s',
+    title: {
+      tr: 'Y. Uzun Home\'s',
+      en: 'Y. Uzun Home\'s',
+      ru: 'Y. Uzun Home\'s'
+    },
     category: 'Konut',
     coverImage: '/images/projects/y-uzun-homes/01.jpg',
     images: [
@@ -78,12 +110,20 @@ export const projects: Project[] = [
       '/images/projects/y-uzun-homes/05.jpg',
       '/images/projects/y-uzun-homes/06.jpg',
     ],
-    summary: 'Kardentech Mühendislik\'in görev aldığı Y. Uzun Home\'s projesinden seçkiler.',
+    summary: {
+      tr: 'Kardentech Mühendislik\'in görev aldığı Y. Uzun Home\'s projesinden seçkiler.',
+      en: 'Selections from the Y. Uzun Home\'s project in which Kardentech Engineering was involved.',
+      ru: 'Избранное из проекта Y. Uzun Home\'s, в котором принимала участие компания Kardentech Engineering.'
+    },
   },
   {
     id: 'baia-bodrum-hotel',
     slug: 'baia-bodrum-hotel',
-    title: 'Baia Bodrum Hotel',
+    title: {
+      tr: 'Baia Bodrum Hotel',
+      en: 'Baia Bodrum Hotel',
+      ru: 'Baia Bodrum Hotel'
+    },
     category: 'Otel',
     coverImage: '/images/projects/baia-bodrum-hotel/01.jpg',
     images: [
@@ -95,12 +135,20 @@ export const projects: Project[] = [
       '/images/projects/baia-bodrum-hotel/06.jpg',
       '/images/projects/baia-bodrum-hotel/07.jpg',
     ],
-    summary: 'Kardentech Mühendislik\'in görev aldığı Baia Bodrum Hotel projesinden seçkiler.',
+    summary: {
+      tr: 'Kardentech Mühendislik\'in görev aldığı Baia Bodrum Hotel projesinden seçkiler.',
+      en: 'Selections from the Baia Bodrum Hotel project in which Kardentech Engineering was involved.',
+      ru: 'Избранное из проекта Baia Bodrum Hotel, в котором принимала участие компания Kardentech Engineering.'
+    },
   },
   {
     id: 'sekerpinar-fabrikasi',
     slug: 'sekerpinar-fabrikasi',
-    title: 'Şekerpınar Fabrikası',
+    title: {
+      tr: 'Şekerpınar Fabrikası',
+      en: 'Şekerpınar Factory',
+      ru: 'Фабрика Şekerpınar'
+    },
     category: 'Endüstriyel',
     coverImage: '/images/projects/sekerpinar-fabrikasi/01.jpg',
     images: [
@@ -108,6 +156,10 @@ export const projects: Project[] = [
       '/images/projects/sekerpinar-fabrikasi/02.jpg',
       '/images/projects/sekerpinar-fabrikasi/03.jpg',
     ],
-    summary: 'Kardentech Mühendislik\'in görev aldığı Şekerpınar Fabrikası projesinden seçkiler.',
+    summary: {
+      tr: 'Kardentech Mühendislik\'in görev aldığı Şekerpınar Fabrikası projesinden seçkiler.',
+      en: 'Selections from the Şekerpınar Factory project in which Kardentech Engineering was involved.',
+      ru: 'Избранное из проекта Фабрика Şekerpınar, в котором принимала участие компания Kardentech Engineering.'
+    },
   },
 ];

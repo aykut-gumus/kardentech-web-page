@@ -1,7 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
+import { Locale } from '@/i18n/types';
+import { getDictionary } from '@/i18n';
+import { routeMap } from '@/i18n/routes';
 
-export default function AboutCTA() {
+export default function AboutCTA({ lang }: { lang: Locale }) {
+  const dict = getDictionary(lang);
+
   return (
     <section className="w-full bg-[var(--color-charcoal)] px-6 md:px-12 lg:px-20 2xl:px-32 py-20 md:py-28 relative overflow-hidden">
       {/* Decorative bg element */}
@@ -9,21 +14,21 @@ export default function AboutCTA() {
 
       <div className="max-w-[1440px] mx-auto flex flex-col items-center text-center relative z-10">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-10 font-heading leading-tight max-w-3xl">
-          Size Uygun Yaşanabilir Mekanlar Sunuyoruz.
+          {dict.about.slogan}
         </h2>
         
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">
           <Link 
-            href="/referanslar" 
+            href={routeMap.references[lang]} 
             className="inline-flex items-center justify-center px-8 py-4 bg-[var(--color-bodrum-blue)] text-white text-sm md:text-base font-semibold tracking-widest uppercase hover:bg-white hover:text-[var(--color-bodrum-blue)] transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-sm"
           >
-            REFERANSLAR
+            {dict.nav.references}
           </Link>
           <Link 
-            href="/iletisim" 
+            href={routeMap.contact[lang]} 
             className="inline-flex items-center justify-center px-8 py-4 bg-transparent border border-white text-white text-sm md:text-base font-semibold tracking-widest uppercase hover:bg-white hover:text-[var(--color-charcoal)] transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-sm"
           >
-            BİZE ULAŞIN
+            {dict.common.contactUs}
           </Link>
         </div>
       </div>

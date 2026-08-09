@@ -1,5 +1,7 @@
 import React from 'react';
 import { Phone } from 'lucide-react';
+import { Locale } from '@/i18n/types';
+import { getDictionary } from '@/i18n';
 
 const InstagramIcon = () => (
   <svg
@@ -19,11 +21,12 @@ const InstagramIcon = () => (
   </svg>
 );
 
-export default function Footer() {
+export default function Footer({ lang }: { lang: Locale }) {
+  const dict = getDictionary(lang);
   return (
     <footer className="h-[60px] bg-[var(--color-charcoal)] text-[var(--color-soft-gray)] flex items-center px-6 md:px-12 lg:px-20 2xl:px-32 justify-between shrink-0">
-      <div className="text-sm font-semibold tracking-wider font-heading">
-        BİZE ULAŞIN
+      <div className="text-sm font-semibold tracking-wider font-heading uppercase">
+        {dict.common.contactUs}
       </div>
       <div className="flex gap-6 items-center text-sm">
         <a href="tel:05320609072" className="flex items-center gap-2 hover:text-[var(--color-bodrum-blue-light)] transition-colors">

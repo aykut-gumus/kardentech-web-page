@@ -1,16 +1,20 @@
 import React from 'react';
 import { MapPin, Phone, Mail } from 'lucide-react';
 import ContactForm from './ContactForm';
+import { Locale } from '@/i18n/types';
+import { getDictionary } from '@/i18n';
 
-export default function ContactMain() {
+export default function ContactMain({ lang }: { lang: Locale }) {
+  const dict = getDictionary(lang);
+
   return (
     <section className="w-full bg-[var(--color-white)] px-6 md:px-12 lg:px-20 2xl:px-32 pt-16 md:pt-24 pb-12 md:pb-16">
       <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12">
         
         {/* Left Column: Info */}
         <div className="lg:col-span-5 flex flex-col">
-          <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-charcoal)] font-heading tracking-tight leading-tight mb-10">
-            Bize Ulaşın
+          <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-charcoal)] font-heading tracking-tight leading-tight mb-10 uppercase">
+            {dict.common.contactUs}
           </h2>
           
           <div className="flex flex-col gap-10">
@@ -19,7 +23,7 @@ export default function ContactMain() {
               <MapPin className="w-6 h-6 text-[var(--color-bodrum-blue)] shrink-0 mt-1" strokeWidth={1.5} />
               <div className="flex flex-col">
                 <h3 className="text-xs font-bold text-[var(--color-graphite)] uppercase tracking-widest mb-2">
-                  ADRES
+                  {dict.contact.info.address}
                 </h3>
                 <address className="not-italic text-base md:text-lg text-[var(--color-charcoal)] font-medium leading-relaxed mb-3">
                   Dirmil Mah. 6698 Sk.<br />
@@ -32,7 +36,7 @@ export default function ContactMain() {
                   rel="noopener noreferrer"
                   className="group inline-flex items-center text-xs font-semibold tracking-wider text-[var(--color-bodrum-blue)] uppercase focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue)] rounded-sm w-fit"
                 >
-                  HARİTADA AÇ
+                  {dict.common.openInMaps}
                   <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
                 </a>
               </div>
@@ -43,7 +47,7 @@ export default function ContactMain() {
               <Phone className="w-6 h-6 text-[var(--color-bodrum-blue)] shrink-0 mt-1" strokeWidth={1.5} />
               <div className="flex flex-col">
                 <h3 className="text-xs font-bold text-[var(--color-graphite)] uppercase tracking-widest mb-2">
-                  TELEFON / WHATSAPP
+                  {dict.contact.info.phone}
                 </h3>
                 <div className="text-base md:text-lg text-[var(--color-charcoal)] font-medium mb-3">
                   0532 060 90 72
@@ -51,20 +55,20 @@ export default function ContactMain() {
                 <div className="flex flex-wrap gap-4">
                   <a 
                     href="tel:+905320609072" 
-                    aria-label="0532 060 90 72 numarasını ara"
+                    aria-label="0532 060 90 72"
                     className="group inline-flex items-center text-xs font-semibold tracking-wider text-[var(--color-bodrum-blue)] uppercase focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue)] rounded-sm w-fit"
                   >
-                    ARA
+                    {dict.contact.info.call}
                   </a>
                   <span className="text-[var(--color-medium-gray)]">|</span>
                   <a 
                     href="https://wa.me/905320609072" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    aria-label="Kardentech ile WhatsApp üzerinden iletişime geç"
+                    aria-label="WhatsApp"
                     className="group inline-flex items-center text-xs font-semibold tracking-wider text-[var(--color-bodrum-blue)] uppercase focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue)] rounded-sm w-fit"
                   >
-                    WHATSAPP
+                    {dict.common.whatsapp}
                   </a>
                 </div>
               </div>
@@ -75,7 +79,7 @@ export default function ContactMain() {
               <Mail className="w-6 h-6 text-[var(--color-bodrum-blue)] shrink-0 mt-1" strokeWidth={1.5} />
               <div className="flex flex-col">
                 <h3 className="text-xs font-bold text-[var(--color-graphite)] uppercase tracking-widest mb-2">
-                  E-MAIL
+                  {dict.contact.info.email}
                 </h3>
                 <div className="text-base md:text-lg text-[var(--color-charcoal)] font-medium">
                   info@kardentech.com
@@ -104,7 +108,7 @@ export default function ContactMain() {
               </div>
               <div className="flex flex-col">
                 <h3 className="text-xs font-bold text-[var(--color-graphite)] uppercase tracking-widest mb-2">
-                  INSTAGRAM
+                  {dict.contact.info.instagram}
                 </h3>
                 <div className="text-base md:text-lg text-[var(--color-charcoal)] font-medium mb-3">
                   kardentech
@@ -113,10 +117,10 @@ export default function ContactMain() {
                   href="https://www.instagram.com/kardentech/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  aria-label="Kardentech Instagram hesabını aç"
+                  aria-label="Instagram"
                   className="group inline-flex items-center text-xs font-semibold tracking-wider text-[var(--color-bodrum-blue)] uppercase focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue)] rounded-sm w-fit"
                 >
-                  PROFİLİ GÖR
+                  {dict.contact.info.viewProfile}
                   <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
                 </a>
               </div>
@@ -126,7 +130,7 @@ export default function ContactMain() {
 
         {/* Right Column: Form */}
         <div className="lg:col-span-7 bg-[var(--color-light-gray)] p-6 md:p-10 rounded-sm">
-          <ContactForm />
+          <ContactForm lang={lang} />
         </div>
         
       </div>

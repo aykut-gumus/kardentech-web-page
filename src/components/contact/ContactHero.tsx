@@ -1,7 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
+import { Locale } from '@/i18n/types';
+import { getDictionary } from '@/i18n';
 
-export default function ContactHero() {
+export default function ContactHero({ lang }: { lang: Locale }) {
+  const dict = getDictionary(lang);
+  
   return (
     <section className="relative w-full h-[40vh] md:h-[46vh] flex overflow-hidden shrink-0 bg-[var(--color-charcoal)]">
       {/* Background Image */}
@@ -23,13 +27,13 @@ export default function ContactHero() {
       {/* Content */}
       <div className="relative z-20 flex flex-col justify-end px-6 md:px-12 lg:px-20 2xl:px-32 pb-12 w-full max-w-[1440px] mx-auto h-full">
         <div className="text-[12px] md:text-sm font-semibold tracking-[0.2em] text-[var(--color-bodrum-blue-light)] uppercase mb-4">
-          KARDENTECH MÜHENDİSLİK
+          {dict.home.hero.title}
         </div>
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight font-heading mb-4 max-w-4xl">
-          İLETİŞİM
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight font-heading mb-4 max-w-4xl uppercase">
+          {dict.nav.contact}
         </h1>
         <p className="text-white/90 text-lg md:text-xl max-w-2xl font-light tracking-wide">
-          Projeleriniz ve iş birliği talepleriniz için bizimle iletişime geçin.
+          {lang === 'tr' ? 'Projeleriniz ve iş birliği talepleriniz için bizimle iletişime geçin.' : lang === 'en' ? 'Contact us for your projects and cooperation requests.' : 'Свяжитесь с нами для ваших проектов и запросов на сотрудничество.'}
         </p>
       </div>
     </section>
