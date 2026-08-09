@@ -64,10 +64,12 @@ export default function Navbar() {
           
           <button 
             onClick={toggleServices}
-            className={`transition-colors relative group py-2 ${(isServicesOpen || isServicesActive) ? 'text-[var(--color-bodrum-blue)]' : 'hover:text-[var(--color-bodrum-blue)]'}`}
+            aria-expanded={isServicesOpen}
+            aria-controls="services-dropdown"
+            className={`transition-colors relative group py-2 ${isServicesOpen ? 'text-[var(--color-bodrum-blue)]/80' : ''} ${isServicesActive ? 'text-[var(--color-bodrum-blue)]' : 'hover:text-[var(--color-bodrum-blue)]'}`}
           >
             Hizmetlerimiz
-            <span className={`absolute bottom-0 left-0 h-[2px] bg-[var(--color-bodrum-blue)] transition-all ${(isServicesOpen || isServicesActive) ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+            <span className={`absolute bottom-0 left-0 h-[2px] bg-[var(--color-bodrum-blue)] transition-all ${isServicesActive ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
           </button>
           
           <Link href="/referanslar" className={`transition-colors relative group py-2 ${pathname.startsWith('/referanslar') ? 'text-[var(--color-bodrum-blue)]' : 'hover:text-[var(--color-bodrum-blue)]'}`}>
@@ -90,7 +92,7 @@ export default function Navbar() {
       )}
 
       {/* Dropdown */}
-      <ServicesDropdown isOpen={isServicesOpen} />
+      <ServicesDropdown isOpen={isServicesOpen} onClose={() => setIsServicesOpen(false)} />
     </div>
   );
 }
