@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone } from 'lucide-react';
+import { Phone, MapPin } from 'lucide-react';
 import { Locale } from '@/i18n/types';
 import { getDictionary } from '@/i18n';
 
@@ -24,10 +24,18 @@ const InstagramIcon = () => (
 export default function Footer({ lang }: { lang: Locale }) {
   const dict = getDictionary(lang);
   return (
-    <footer className="h-[60px] bg-[var(--color-charcoal)] text-[var(--color-soft-gray)] flex items-center px-6 md:px-12 lg:px-20 2xl:px-32 justify-between shrink-0">
-      <div className="text-sm font-semibold tracking-wider font-heading uppercase">
-        {dict.common.contactUs}
-      </div>
+    <footer className="w-full h-auto min-h-[60px] md:h-[60px] bg-[var(--color-charcoal)] text-[var(--color-soft-gray)] flex flex-col md:flex-row md:items-center px-4 md:px-12 lg:px-20 2xl:px-32 justify-between shrink-0 py-3 md:py-0 gap-3 md:gap-6">
+      <a 
+        href="https://maps.app.goo.gl/JFnSd92f3UvoxZAr5"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-start md:items-center gap-2 text-xs md:text-sm font-medium hover:text-[var(--color-bodrum-blue-light)] transition-colors group cursor-pointer"
+      >
+        <MapPin size={16} className="shrink-0 mt-0.5 md:mt-0 text-[var(--color-bodrum-blue-light)] md:text-current group-hover:text-[var(--color-bodrum-blue-light)] transition-colors" />
+        <span className="leading-snug line-clamp-2 md:line-clamp-none">
+          Dirmil Mah. 6698 Sk. Küçük Sanayi Sitesi No: 12/13 Yalıkavak Bodrum/MUĞLA
+        </span>
+      </a>
       <div className="flex gap-6 items-center text-sm">
         <a href="tel:05320609072" className="flex items-center gap-2 hover:text-[var(--color-bodrum-blue-light)] transition-colors">
           <Phone size={16} />

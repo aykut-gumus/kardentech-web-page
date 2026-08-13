@@ -218,12 +218,26 @@ export default function HomeServicePanels({ lang }: { lang: Locale }) {
             />
           </div>
           
-          <div className="absolute z-10 flex flex-col pointer-events-none" style={{ left: '71%', top: '53%', transform: 'translateY(-50%)' }}>
-            <div className="w-[40px] h-[3px] bg-white/70 mb-4 transition-all duration-500 group-hover:w-[60px] group-hover:bg-white" />
-            <h2 className="text-3xl lg:text-4xl 2xl:text-5xl font-bold text-white mb-2 uppercase leading-tight font-heading drop-shadow-md whitespace-nowrap">
-              {dict.services.categories.finishing.title}
+          <div 
+            className={`absolute z-20 flex flex-col pointer-events-none ${(lang === 'ru' || lang === 'en') ? 'items-center' : 'items-start'}`} 
+            style={{ 
+              left: (lang === 'ru' || lang === 'en') ? '63%' : '71%', 
+              right: (lang === 'ru' || lang === 'en') ? '3%' : 'auto',
+              top: (lang === 'ru' || lang === 'en') ? '62%' : '53%', 
+              transform: 'translateY(-50%)' 
+            }}
+          >
+            <div className={`w-[40px] h-[3px] bg-white/70 transition-all duration-500 group-hover:w-[60px] group-hover:bg-white ${(lang === 'ru' || lang === 'en') ? 'mb-6' : 'mb-7'}`} />
+            <h2 className={`text-3xl lg:text-4xl 2xl:text-5xl font-bold text-white uppercase font-heading drop-shadow-md ${(lang === 'ru' || lang === 'en') ? 'mb-6 leading-[1.05] text-center' : 'mb-7 leading-tight whitespace-nowrap'}`}>
+              {lang === 'en' ? (
+                <>FINISHING<br />WORKS</>
+              ) : lang === 'ru' ? (
+                <>ОТДЕЛОЧНЫЕ<br />РАБОТЫ</>
+              ) : (
+                dict.services.categories.finishing.title
+              )}
             </h2>
-            <div className="flex items-center text-white/80 group-hover:text-white transition-colors duration-400 font-medium tracking-wider text-xs lg:text-sm uppercase mt-4 drop-shadow-sm">
+            <div className="flex items-center text-white/80 group-hover:text-white transition-colors duration-400 font-medium tracking-wider text-xs lg:text-sm uppercase drop-shadow-sm">
               {dict.common.learnMore}
               <ArrowRight className="ml-2 w-4 h-4 lg:w-5 lg:h-5 transition-transform duration-400 group-hover:translate-x-1.5" />
             </div>

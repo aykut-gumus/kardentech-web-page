@@ -9,6 +9,7 @@
   --color-soft-gray: #F3F5F6;
   --color-medium-gray: #D8DDE1;
   --color-white: #FFFFFF;
+  --font-script: var(--font-courgette), cursive;
 }
 
 @layer base {

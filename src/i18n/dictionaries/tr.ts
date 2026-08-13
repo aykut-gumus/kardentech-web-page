@@ -28,7 +28,7 @@ export const tr: Dictionary = {
     },
   },
   about: {
-    slogan: 'Size Özel Yaşanabilir Mekanlar Yaratıyoruz.',
+    slogan: 'Size uygun yaşanabilir mekanlar sunuyoruz.',
     intro: {
       p1: 'Kardentech Mühendislik, kurucularının 25 yıllık sektör tecrübesiyle Bodrum merkezli olarak dekorasyon, mekanik ve elektrik tesisat taahhütleri ile tasarım ve proje danışmanlığı alanlarında hizmet vermektedir.',
       p2: 'Ulusal ve uluslararası vizyonumuzla prestijli projelere değer katıyor; müşteri odaklı ve yenilikçi mühendislik çözümleriyle sektörde fark yaratmayı hedefliyoruz.',

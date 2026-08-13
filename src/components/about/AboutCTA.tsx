@@ -8,12 +8,12 @@ export default function AboutCTA({ lang }: { lang: Locale }) {
   const dict = getDictionary(lang);
 
   return (
-    <section className="w-full bg-[var(--color-charcoal)] px-6 md:px-12 lg:px-20 2xl:px-32 py-20 md:py-28 relative overflow-hidden">
+    <section className="w-full bg-[var(--color-charcoal)] px-6 md:px-12 lg:px-20 2xl:px-32 py-12 md:py-0 md:h-[220px] flex flex-col justify-center relative overflow-hidden">
       {/* Decorative bg element */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-[var(--color-bodrum-blue)]/10 skew-x-12 translate-x-32"></div>
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-[#24313A] skew-x-12 translate-x-32"></div>
 
-      <div className="max-w-[1440px] mx-auto flex flex-col items-center text-center relative z-10">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-10 font-heading leading-tight max-w-3xl">
+      <div className="max-w-[1440px] mx-auto w-full flex flex-col items-center text-center relative z-10">
+        <h2 className="text-3xl md:text-4xl font-script font-light text-white mb-8 tracking-wide max-w-[90%] md:max-w-none md:whitespace-nowrap">
           {dict.about.slogan}
         </h2>
         

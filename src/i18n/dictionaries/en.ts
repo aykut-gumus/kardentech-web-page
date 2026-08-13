@@ -28,7 +28,7 @@ export const en: Dictionary = {
     },
   },
   about: {
-    slogan: 'We Create Livable Spaces Tailored to You.',
+    slogan: 'We Offer Livable Spaces Tailored to You.',
     intro: {
       p1: 'Kardentech Engineering, with its founders\' 25 years of industry experience, provides services based in Bodrum in the fields of decoration, mechanical and electrical installation contracting, and design and project consultancy.',
       p2: 'With our national and international vision, we add value to prestigious projects and aim to make a difference in the sector through customer-oriented and innovative engineering solutions.',

@@ -7,7 +7,7 @@ export default function AboutHero({ lang }: { lang: Locale }) {
   const dict = getDictionary(lang);
   
   return (
-    <section className="relative w-full h-[45vh] md:h-[55vh] flex overflow-hidden shrink-0 bg-[var(--color-charcoal)]">
+    <section className="relative w-full h-[40vh] md:h-[46vh] flex overflow-hidden shrink-0 bg-[var(--color-charcoal)]">
       {/* Background Composition */}
       <div className="absolute inset-0 z-0 flex flex-col md:flex-row w-full h-full md:-ml-[2%] md:w-[104%]">
         <div className="relative w-full h-1/3 md:w-1/3 md:h-full grayscale-[0.8] opacity-60 md:skew-x-[-3deg] md:overflow-hidden md:-ml-4">

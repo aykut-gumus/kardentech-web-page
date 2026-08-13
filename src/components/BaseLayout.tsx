@@ -1,7 +1,13 @@
-import { Montserrat, Inter } from "next/font/google";
+import { Montserrat, Inter, Courgette } from "next/font/google";
 import "@/app/globals.css";
 import TopBar from "@/components/TopBar";
 import Navbar from "@/components/Navbar";
+
+const courgette = Courgette({
+  weight: "400",
+  variable: "--font-courgette",
+  subsets: ["latin", "latin-ext"],
+});
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -22,7 +28,7 @@ export default function BaseLayout({
 }) {
   return (
     <html lang={lang}>
-      <body className={`${montserrat.variable} ${inter.variable} font-sans antialiased bg-[var(--color-white)] text-[var(--color-charcoal)]`}>
+      <body className={`${montserrat.variable} ${inter.variable} ${courgette.variable} font-sans antialiased bg-[var(--color-white)] text-[var(--color-charcoal)]`}>
         <div className="flex flex-col min-h-screen">
           <TopBar lang={lang as any} />
           <Navbar lang={lang as any} />

@@ -48,7 +48,7 @@ export default function ProjectGrid({ lang }: { lang: Locale }) {
           <button
             key={cat.key}
             onClick={() => setActiveCategory(cat.val)}
-            className={`pb-2 text-sm md:text-base font-medium transition-colors relative focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue)] rounded-sm ${
+            className={`!cursor-pointer pb-2 text-sm md:text-base font-medium transition-colors relative focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue)] rounded-sm ${
               activeCategory === cat.val 
                 ? 'text-[var(--color-bodrum-blue)]' 
                 : 'text-[var(--color-graphite)] hover:text-[var(--color-bodrum-blue)]'

@@ -1,7 +1,6 @@
 import { getLocalizedMetadata } from '@/i18n/metadata';
 import ServicesHero from '@/components/services/ServicesHero';
 import ServiceApproach from '@/components/services/ServiceApproach';
-import OfficialActivities from '@/components/services/OfficialActivities';
 import ServiceDisciplines from '@/components/services/ServiceDisciplines';
 import ServicesCTA from '@/components/services/ServicesCTA';
 import Footer from '@/components/Footer';
@@ -25,7 +24,6 @@ export default function ServicesPageEN() {
         images={heroImages}
       />
       <ServiceApproach lang="en" />
-      <OfficialActivities lang="en" />
       <ServiceDisciplines lang="en" />
       <ServicesCTA lang="en" />
       <Footer lang="en" />

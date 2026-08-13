@@ -7,8 +7,8 @@ export default function ContactBottom({ lang }: { lang: Locale }) {
   const dict = getDictionary(lang);
 
   return (
-    <section className="w-full bg-[var(--color-charcoal)] px-6 md:px-12 lg:px-20 2xl:px-32 pt-12 md:pt-16 pb-7 md:pb-10 relative overflow-hidden">
-      <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row md:items-center justify-between gap-12 relative z-10">
+    <section className="w-full bg-[var(--color-charcoal)] px-6 md:px-12 lg:px-20 2xl:px-32 py-12 md:py-0 md:h-[280px] flex flex-col justify-center relative overflow-hidden">
+      <div className="max-w-[1440px] mx-auto w-full flex flex-col md:flex-row md:items-center justify-between gap-12 relative z-10">
         
         {/* CTA Side */}
         <div className="flex flex-col max-w-2xl flex-1">
