@@ -2,7 +2,7 @@ import BaseLayout from "@/components/BaseLayout";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Kardentech Mühendislik | Bodrum",
+  title: "KardenTech Mühendislik",
   description: "Bodrum merkezli Kardentech Mühendislik; elektrik sistemleri, mekanik sistemler, ince işler, renovasyon ve mühendislik çözümleri sunmaktadır.",
   alternates: {
     canonical: "https://www.kardentech.com/",

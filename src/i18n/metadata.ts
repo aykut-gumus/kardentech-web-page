@@ -55,10 +55,10 @@ export const getLocalizedMetadata = ({
     }
   }
 
-  const brandName = 'Kardentech';
+  const brandName = 'KardenTech Mühendislik';
   const fullTitle = pageId === 'home' 
-    ? `${title} | Bodrum` 
-    : `${title} | ${brandName} Bodrum`;
+    ? brandName 
+    : `${title} | ${brandName}`;
 
   // Generate hreflang / alternates
   let trPath = '/';

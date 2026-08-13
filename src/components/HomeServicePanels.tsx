@@ -18,82 +18,76 @@ export default function HomeServicePanels({ lang }: { lang: Locale }) {
         MOBILE STACK (Visible only on mobile)
         ========================================
       */}
-      <div className="md:hidden flex flex-col w-full h-full min-h-[calc(100svh-116px)]">
+      <div className="md:hidden flex flex-col w-full h-auto">
         
         {/* Panel 1 - Elektrik Sistemleri */}
-        <div className="relative w-full flex-1 min-h-[300px] group border-b border-white/10 bg-[#126DA6] overflow-hidden">
-          <Link href={routeMap.electrical[lang]} className="block w-full h-full relative focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[var(--color-bodrum-blue)]">
-            <Image 
-              src="/images/projects/baia-bodrum-hotel/01.jpg" 
-              alt={dict.services.categories.electrical.title} 
-              fill 
-              className="object-cover scale-[1.06] -translate-x-[1.5%] transition-transform duration-700 ease-out group-hover:scale-[1.075] group-hover:-translate-x-[1.5%]" 
-              style={{ objectPosition: 'center 60%', filter: 'brightness(0.78) saturate(0.68)' }}
-            />
-            <div className="absolute inset-0 bg-[#1c2024]/70 group-hover:bg-[#1c2024]/60 transition-colors duration-500" />
-            
-            <div className="absolute inset-0 z-20 flex flex-col justify-end p-8 pb-12">
-              <div className="w-[40px] h-[3px] bg-[var(--color-bodrum-blue)] mb-4 transition-all duration-500 group-hover:w-[60px]" />
-              <h2 className="text-2xl font-bold text-white mb-2 uppercase leading-tight font-heading">
-                {dict.services.categories.electrical.title}
-              </h2>
-              <div className="flex items-center text-[var(--color-medium-gray)] group-hover:text-white transition-colors duration-400 font-medium tracking-wider text-xs uppercase mt-2">
-                {dict.common.learnMore}
-                <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-400 group-hover:translate-x-1.5" />
-              </div>
+        <Link href={routeMap.electrical[lang]} className="relative block w-full h-[240px] overflow-hidden group border-b border-white/10">
+          <Image 
+            src="/images/projects/baia-bodrum-hotel/01.jpg" 
+            alt={dict.services.categories.electrical.title} 
+            fill 
+            className="object-cover z-0 transition-transform duration-700 ease-out group-hover:scale-[1.05]" 
+            style={{ objectPosition: 'center 60%' }}
+          />
+          <div className="absolute inset-0 bg-[#1c2024]/55 z-10 transition-colors duration-500 group-hover:bg-[#1c2024]/45" />
+          
+          <div className="absolute inset-0 z-20 flex flex-col justify-center px-7">
+            <div className="w-[40px] h-[3px] bg-white mb-4 transition-all duration-500 group-hover:w-[60px]" />
+            <h2 className="text-2xl font-bold text-white mb-2 uppercase leading-tight font-heading break-words">
+              {dict.services.categories.electrical.title}
+            </h2>
+            <div className="flex items-center text-white/80 group-hover:text-white transition-colors duration-400 font-medium tracking-wider text-xs uppercase mt-2">
+              {dict.common.learnMore}
+              <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-400 group-hover:translate-x-1.5" />
             </div>
-          </Link>
-        </div>
+          </div>
+        </Link>
 
         {/* Panel 2 - Mekanik Sistemler */}
-        <div className="relative w-full flex-1 min-h-[300px] group border-b border-white/10 bg-[#343A40] overflow-hidden">
-          <Link href={routeMap.mechanical[lang]} className="block w-full h-full relative focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[var(--color-bodrum-blue)]">
-            <Image 
-              src="/images/projects/sekerpinar-fabrikasi/02.jpg" 
-              alt={dict.services.categories.mechanical.title} 
-              fill 
-              className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.015]"
-              style={{ objectPosition: 'center center', filter: 'brightness(0.78) saturate(0.65)' }} 
-            />
-            <div className="absolute inset-0 bg-[var(--color-charcoal)]/60 group-hover:bg-[var(--color-charcoal)]/50 transition-colors duration-500" />
-            
-            <div className="absolute inset-0 z-20 flex flex-col justify-end p-8 pb-12">
-              <div className="w-[40px] h-[3px] bg-[var(--color-bodrum-blue)] mb-4 transition-all duration-500 group-hover:w-[60px]" />
-              <h2 className="text-2xl font-bold text-white mb-2 uppercase leading-tight font-heading">
-                {dict.services.categories.mechanical.title}
-              </h2>
-              <div className="flex items-center text-[var(--color-medium-gray)] group-hover:text-white transition-colors duration-400 font-medium tracking-wider text-xs uppercase mt-2">
-                {dict.common.learnMore}
-                <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-400 group-hover:translate-x-1.5" />
-              </div>
+        <Link href={routeMap.mechanical[lang]} className="relative block w-full h-[240px] overflow-hidden group border-b border-white/10">
+          <Image 
+            src="/images/projects/sekerpinar-fabrikasi/02.jpg" 
+            alt={dict.services.categories.mechanical.title} 
+            fill 
+            className="object-cover z-0 transition-transform duration-700 ease-out group-hover:scale-[1.05]"
+            style={{ objectPosition: 'center center' }} 
+          />
+          <div className="absolute inset-0 bg-[#1c2024]/55 z-10 transition-colors duration-500 group-hover:bg-[#1c2024]/45" />
+          
+          <div className="absolute inset-0 z-20 flex flex-col justify-center px-7">
+            <div className="w-[40px] h-[3px] bg-white mb-4 transition-all duration-500 group-hover:w-[60px]" />
+            <h2 className="text-2xl font-bold text-white mb-2 uppercase leading-tight font-heading break-words">
+              {dict.services.categories.mechanical.title}
+            </h2>
+            <div className="flex items-center text-white/80 group-hover:text-white transition-colors duration-400 font-medium tracking-wider text-xs uppercase mt-2">
+              {dict.common.learnMore}
+              <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-400 group-hover:translate-x-1.5" />
             </div>
-          </Link>
-        </div>
+          </div>
+        </Link>
 
         {/* Panel 3 - İnce İşler */}
-        <div className="relative w-full flex-1 min-h-[300px] group bg-[#111111] overflow-hidden">
-          <Link href={routeMap.finishing[lang]} className="block w-full h-full relative focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[var(--color-bodrum-blue)]">
-            <Image 
-              src="/images/projects/y-uzun-homes/01.jpg" 
-              alt={dict.services.categories.finishing.title} 
-              fill 
-              className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.015]"
-              style={{ objectPosition: 'center center', filter: 'brightness(0.65) saturate(0.60)' }} 
-            />
-            <div className="absolute inset-0 bg-[#111]/80 group-hover:bg-[#111]/70 transition-colors duration-500" />
-            
-            <div className="absolute inset-0 z-20 flex flex-col justify-end p-8 pb-12">
-              <div className="w-[40px] h-[3px] bg-[var(--color-bodrum-blue)] mb-4 transition-all duration-500 group-hover:w-[60px]" />
-              <h2 className="text-2xl font-bold text-white mb-2 uppercase leading-tight font-heading">
-                {dict.services.categories.finishing.title}
-              </h2>
-              <div className="flex items-center text-[var(--color-medium-gray)] group-hover:text-white transition-colors duration-400 font-medium tracking-wider text-xs uppercase mt-2">
-                {dict.common.learnMore}
-                <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-400 group-hover:translate-x-1.5" />
-              </div>
+        <Link href={routeMap.finishing[lang]} className="relative block w-full h-[240px] overflow-hidden group">
+          <Image 
+            src="/images/projects/y-uzun-homes/01.jpg" 
+            alt={dict.services.categories.finishing.title} 
+            fill 
+            className="object-cover z-0 transition-transform duration-700 ease-out group-hover:scale-[1.05]"
+            style={{ objectPosition: 'center center' }} 
+          />
+          <div className="absolute inset-0 bg-[#1c2024]/55 z-10 transition-colors duration-500 group-hover:bg-[#1c2024]/45" />
+          
+          <div className="absolute inset-0 z-20 flex flex-col justify-center px-7">
+            <div className="w-[40px] h-[3px] bg-white mb-4 transition-all duration-500 group-hover:w-[60px]" />
+            <h2 className="text-2xl font-bold text-white mb-2 uppercase leading-tight font-heading break-words">
+              {dict.services.categories.finishing.title}
+            </h2>
+            <div className="flex items-center text-white/80 group-hover:text-white transition-colors duration-400 font-medium tracking-wider text-xs uppercase mt-2">
+              {dict.common.learnMore}
+              <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-400 group-hover:translate-x-1.5" />
             </div>
-          </Link>
-        </div>
+          </div>
+        </Link>
 
       </div>
 
