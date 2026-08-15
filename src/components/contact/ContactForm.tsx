@@ -187,7 +187,7 @@ export default function ContactForm({ lang }: { lang: Locale }) {
             <button 
               type="submit" 
               disabled={status === 'sending'}
-              className="!cursor-pointer inline-flex items-center justify-center px-10 py-4 bg-[var(--color-bodrum-blue)] text-white text-sm md:text-base font-semibold tracking-widest uppercase hover:bg-[var(--color-charcoal)] transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--color-bodrum-blue)] rounded-sm disabled:opacity-70 disabled:cursor-not-allowed"
+              className="!cursor-pointer inline-flex items-center justify-center px-10 py-4 bg-[var(--color-bodrum-blue)] text-[var(--color-charcoal)] text-sm md:text-base font-semibold tracking-widest uppercase hover:bg-[var(--color-bodrum-blue-dark)] hover:text-white transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--color-bodrum-blue-dark)] rounded-sm disabled:opacity-70 disabled:cursor-not-allowed"
             >
               {status === 'sending' ? dict.contact.form.sending : dict.contact.form.submit}
             </button>

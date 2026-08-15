@@ -96,12 +96,12 @@ export default function HomeServicePanels({ lang }: { lang: Locale }) {
         DESKTOP DIAGONAL LAYOUT (md and up)
         ========================================
       */}
-      <div className="hidden md:block w-full h-full flex-1 relative overflow-hidden isolate bg-transparent">
+      <div className="hidden md:block w-full h-full flex-1 relative overflow-hidden isolate bg-transparent group/panels">
         
         {/* PANEL 1: ELEKTRİK SİSTEMLERİ */}
         <Link 
           href={routeMap.electrical[lang]} 
-          className="absolute inset-0 z-[1] bg-[#126DA6] group block focus:outline-none transition-all overflow-hidden"
+          className="absolute inset-0 z-[1] bg-[var(--color-bodrum-blue)] group block focus:outline-none transition-all overflow-hidden"
           style={{ 
             clipPath: 'polygon(0% 0%, 86% 0%, 66% 50%, 0% 50%)',
             WebkitClipPath: 'polygon(0% 0%, 86% 0%, 66% 50%, 0% 50%)'
@@ -244,23 +244,18 @@ export default function HomeServicePanels({ lang }: { lang: Locale }) {
           ========================================
         */}
         <svg 
-          className="absolute inset-0 w-full h-full pointer-events-none z-10 transition-colors duration-500 text-[rgba(255,255,255,0.23)] group-hover:text-[rgba(255,255,255,0.33)]" 
+          className="absolute inset-0 w-full h-full pointer-events-none z-10 text-[var(--color-bodrum-blue)] opacity-[0.62] group-hover/panels:opacity-[0.78] transition-opacity duration-300" 
           viewBox="0 0 100 100" 
           preserveAspectRatio="none"
+          style={{ filter: 'drop-shadow(1px 1px 0px rgba(0,0,0,0.4))' }}
         >
-          {/* Horizontal Line between Electric and Mechanical */}
+          {/* Horizontal Line between Electric and Mechanical, and Diagonal Line for Finishing Works */}
           <path 
-            d="M 0 50 L 66 50" 
+            d="M 0 50 L 66 50 L 86 0 M 66 50 L 46 100" 
             stroke="currentColor" 
-            strokeWidth="1" 
-            vectorEffect="non-scaling-stroke" 
-            fill="none" 
-          />
-          {/* Diagonal Line separating Finishing Works */}
-          <path 
-            d="M 86 0 L 46 100" 
-            stroke="currentColor" 
-            strokeWidth="1" 
+            strokeWidth="2" 
+            strokeLinejoin="miter"
+            strokeLinecap="butt"
             vectorEffect="non-scaling-stroke" 
             fill="none" 
           />

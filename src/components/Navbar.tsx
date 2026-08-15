@@ -51,7 +51,9 @@ export default function Navbar({ lang }: { lang: Locale }) {
     };
   }, [isMobileMenuOpen]);
 
-  const toggleServices = () => {
+  const toggleServices = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
     setIsServicesOpen(!isServicesOpen);
   };
 
@@ -65,15 +67,14 @@ export default function Navbar({ lang }: { lang: Locale }) {
         <Link 
           href={routeMap.home[lang]} 
           onClick={() => { setIsServicesOpen(false); setIsMobileMenuOpen(false); }}
-          className="flex flex-col relative z-50 hover:opacity-90 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue)] rounded-sm p-1 -m-1"
+          className="block relative z-50 hover:opacity-90 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue)] rounded-sm p-1 -m-1 h-[45px] md:h-[55px] w-[145px] md:w-[180px] lg:w-[210px] 2xl:w-[230px]"
         >
           <Image 
-            src="/images/brand/kardentech-logo.png" 
+            src="/images/brand/kardentech-logo-company.jpeg" 
             alt="Kardentech Logo" 
-            width={240}
-            height={60}
+            fill
             priority
-            className="w-[145px] md:w-[180px] lg:w-[210px] 2xl:w-[230px] h-auto object-contain"
+            className="object-contain object-left"
           />
         </Link>
 
@@ -92,7 +93,7 @@ export default function Navbar({ lang }: { lang: Locale }) {
           <Link 
             href={routeMap.home[lang]} 
             onClick={() => setIsServicesOpen(false)}
-            className={`transition-colors relative group py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue)] rounded-sm ${pageId === 'home' ? 'text-[var(--color-bodrum-blue)]' : 'hover:text-[var(--color-bodrum-blue)]'}`}
+            className={`transition-colors relative group py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue)] rounded-sm ${pageId === 'home' ? 'text-[var(--color-bodrum-blue-dark)]' : 'hover:text-[var(--color-bodrum-blue-dark)]'}`}
           >
             {dict.nav.home}
             <span className={`absolute bottom-0 left-0 h-[2px] bg-[var(--color-bodrum-blue)] transition-all ${pageId === 'home' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
@@ -100,7 +101,7 @@ export default function Navbar({ lang }: { lang: Locale }) {
           <Link 
             href={routeMap.about[lang]} 
             onClick={() => setIsServicesOpen(false)}
-            className={`transition-colors relative group py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue)] rounded-sm ${pageId === 'about' ? 'text-[var(--color-bodrum-blue)]' : 'hover:text-[var(--color-bodrum-blue)]'}`}
+            className={`transition-colors relative group py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue)] rounded-sm ${pageId === 'about' ? 'text-[var(--color-bodrum-blue-dark)]' : 'hover:text-[var(--color-bodrum-blue-dark)]'}`}
           >
             {dict.nav.about}
             <span className={`absolute bottom-0 left-0 h-[2px] bg-[var(--color-bodrum-blue)] transition-all ${pageId === 'about' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
@@ -110,16 +111,17 @@ export default function Navbar({ lang }: { lang: Locale }) {
             onClick={toggleServices}
             aria-expanded={isServicesOpen}
             aria-controls="services-dropdown"
-            className={`cursor-pointer transition-colors relative group py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue)] rounded-sm ${isServicesOpen ? 'text-[var(--color-bodrum-blue)]/80' : ''} ${isServicesActive ? 'text-[var(--color-bodrum-blue)]' : 'hover:text-[var(--color-bodrum-blue)]'}`}
+            className={`cursor-pointer flex items-center gap-1 transition-colors relative group py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue)] rounded-sm ${isServicesOpen ? 'text-[var(--color-bodrum-blue-dark)]/80' : ''} ${isServicesActive ? 'text-[var(--color-bodrum-blue-dark)]' : 'hover:text-[var(--color-bodrum-blue-dark)]'}`}
           >
             {dict.nav.services}
+            <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} />
             <span className={`absolute bottom-0 left-0 h-[2px] bg-[var(--color-bodrum-blue)] transition-all ${isServicesActive ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
           </button>
           
           <Link 
             href={routeMap.references[lang]} 
             onClick={() => setIsServicesOpen(false)}
-            className={`transition-colors relative group py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue)] rounded-sm ${isReferencesActive ? 'text-[var(--color-bodrum-blue)]' : 'hover:text-[var(--color-bodrum-blue)]'}`}
+            className={`transition-colors relative group py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue)] rounded-sm ${isReferencesActive ? 'text-[var(--color-bodrum-blue-dark)]' : 'hover:text-[var(--color-bodrum-blue-dark)]'}`}
           >
             {dict.nav.references}
             <span className={`absolute bottom-0 left-0 h-[2px] bg-[var(--color-bodrum-blue)] transition-all ${isReferencesActive ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
@@ -127,7 +129,7 @@ export default function Navbar({ lang }: { lang: Locale }) {
           <Link 
             href={routeMap.contact[lang]} 
             onClick={() => setIsServicesOpen(false)}
-            className={`transition-colors relative group py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue)] rounded-sm ${pageId === 'contact' ? 'text-[var(--color-bodrum-blue)]' : 'hover:text-[var(--color-bodrum-blue)]'}`}
+            className={`transition-colors relative group py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue)] rounded-sm ${pageId === 'contact' ? 'text-[var(--color-bodrum-blue-dark)]' : 'hover:text-[var(--color-bodrum-blue-dark)]'}`}
           >
             {dict.nav.contact}
             <span className={`absolute bottom-0 left-0 h-[2px] bg-[var(--color-bodrum-blue)] transition-all ${pageId === 'contact' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
@@ -149,43 +151,44 @@ export default function Navbar({ lang }: { lang: Locale }) {
           <div className="flex flex-col py-2 text-[17px] font-medium text-white/90">
             <Link 
               href={routeMap.home[lang]} 
-              className={`block px-5 py-3.5 text-right transition-colors duration-200 focus:outline-none hover:bg-white/5 border-r-2 ${pageId === 'home' ? 'text-[#126DA6] border-[#126DA6]' : 'border-transparent'}`}
+              className={`block px-5 py-3.5 text-right transition-colors duration-200 focus:outline-none hover:bg-white/5 border-r-2 ${pageId === 'home' ? 'text-[var(--color-bodrum-blue)] border-[var(--color-bodrum-blue)]' : 'border-transparent'}`}
             >
               {dict.nav.home}
             </Link>
             <Link 
               href={routeMap.about[lang]} 
-              className={`block px-5 py-3.5 text-right transition-colors duration-200 focus:outline-none hover:bg-white/5 border-r-2 ${pageId === 'about' ? 'text-[#126DA6] border-[#126DA6]' : 'border-transparent'}`}
+              className={`block px-5 py-3.5 text-right transition-colors duration-200 focus:outline-none hover:bg-white/5 border-r-2 ${pageId === 'about' ? 'text-[var(--color-bodrum-blue)] border-[var(--color-bodrum-blue)]' : 'border-transparent'}`}
             >
               {dict.nav.about}
             </Link>
             
+            {/* SERVICES DROPDOWN MOBILE */}
             <div className="flex flex-col">
               <button 
                 onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-                className={`flex items-center justify-end gap-2 w-full px-5 py-3.5 transition-colors duration-200 focus:outline-none hover:bg-white/5 border-r-2 ${isServicesActive ? 'text-[#126DA6] border-[#126DA6]' : 'border-transparent'}`}
+                className={`flex items-center justify-end gap-2 w-full px-5 py-3.5 transition-colors duration-200 focus:outline-none hover:bg-white/5 border-r-2 ${isServicesActive ? 'text-[var(--color-bodrum-blue)] border-[var(--color-bodrum-blue)]' : 'border-transparent'}`}
               >
                 {isMobileServicesOpen ? <ChevronUp className="w-5 h-5 opacity-70" /> : <ChevronDown className="w-5 h-5 opacity-70" />}
                 <span>{dict.nav.services}</span>
               </button>
               
               {isMobileServicesOpen && (
-                <div className="flex flex-col bg-black/10 text-[15px] border-r border-[#126DA6]/40">
+                <div className="flex flex-col bg-black/10 text-[15px] border-r border-[var(--color-bodrum-blue)]/40">
                   <Link 
                     href={routeMap.electrical[lang]} 
-                    className={`block px-5 py-3 text-right transition-colors duration-200 focus:outline-none hover:bg-white/5 ${pageId === 'electrical' ? 'text-[#126DA6]' : 'text-white/80'}`}
+                    className={`block px-5 py-3 text-right transition-colors duration-200 focus:outline-none hover:bg-white/5 ${pageId === 'electrical' ? 'text-[var(--color-bodrum-blue)]' : 'text-white/80'}`}
                   >
                     {dict.services.categories.electrical.title}
                   </Link>
                   <Link 
                     href={routeMap.mechanical[lang]} 
-                    className={`block px-5 py-3 text-right transition-colors duration-200 focus:outline-none hover:bg-white/5 ${pageId === 'mechanical' ? 'text-[#126DA6]' : 'text-white/80'}`}
+                    className={`block px-5 py-3 text-right transition-colors duration-200 focus:outline-none hover:bg-white/5 ${pageId === 'mechanical' ? 'text-[var(--color-bodrum-blue)]' : 'text-white/80'}`}
                   >
                     {dict.services.categories.mechanical.title}
                   </Link>
                   <Link 
                     href={routeMap.finishing[lang]} 
-                    className={`block px-5 py-3 text-right transition-colors duration-200 focus:outline-none hover:bg-white/5 ${pageId === 'finishing' ? 'text-[#126DA6]' : 'text-white/80'}`}
+                    className={`block px-5 py-3 text-right transition-colors duration-200 focus:outline-none hover:bg-white/5 ${pageId === 'finishing' ? 'text-[var(--color-bodrum-blue)]' : 'text-white/80'}`}
                   >
                     {dict.services.categories.finishing.title}
                   </Link>
@@ -195,13 +198,15 @@ export default function Navbar({ lang }: { lang: Locale }) {
 
             <Link 
               href={routeMap.references[lang]} 
-              className={`block px-5 py-3.5 text-right transition-colors duration-200 focus:outline-none hover:bg-white/5 border-r-2 ${isReferencesActive ? 'text-[#126DA6] border-[#126DA6]' : 'border-transparent'}`}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`block px-5 py-3.5 text-right transition-colors duration-200 focus:outline-none hover:bg-white/5 border-r-2 ${isReferencesActive ? 'text-[var(--color-bodrum-blue)] border-[var(--color-bodrum-blue)]' : 'border-transparent'}`}
             >
               {dict.nav.references}
             </Link>
             <Link 
               href={routeMap.contact[lang]} 
-              className={`block px-5 py-3.5 text-right transition-colors duration-200 focus:outline-none hover:bg-white/5 border-r-2 ${pageId === 'contact' ? 'text-[#126DA6] border-[#126DA6]' : 'border-transparent'}`}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`block px-5 py-3.5 text-right transition-colors duration-200 focus:outline-none hover:bg-white/5 border-r-2 ${pageId === 'contact' ? 'text-[var(--color-bodrum-blue)] border-[var(--color-bodrum-blue)]' : 'border-transparent'}`}
             >
               {dict.nav.contact}
             </Link>

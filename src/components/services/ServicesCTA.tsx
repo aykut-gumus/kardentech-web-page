@@ -20,7 +20,7 @@ export default function ServicesCTA({ lang }: { lang: Locale }) {
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto shrink-0">
           <Link 
             href={routeMap.references[lang]} 
-            className="inline-flex items-center justify-center px-8 py-4 bg-[var(--color-bodrum-blue)] text-white text-sm md:text-base font-semibold tracking-widest uppercase hover:bg-white hover:text-[var(--color-bodrum-blue)] transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-sm"
+            className="inline-flex items-center justify-center px-8 py-4 bg-[var(--color-bodrum-blue)] text-[var(--color-charcoal)] text-sm md:text-base font-semibold tracking-widest uppercase hover:bg-[var(--color-bodrum-blue-dark)] hover:text-white transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue-dark)] rounded-sm"
           >
             {dict.nav.references}
           </Link>

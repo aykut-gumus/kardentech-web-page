@@ -21,7 +21,7 @@ export default function ContactBottom({ lang }: { lang: Locale }) {
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
             <a 
               href="tel:+905320609072" 
-              className="inline-flex items-center justify-center px-6 py-4 bg-[var(--color-bodrum-blue)] text-white text-sm font-semibold tracking-widest uppercase hover:bg-white hover:text-[var(--color-bodrum-blue)] transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-sm"
+              className="inline-flex items-center justify-center px-6 py-4 bg-[var(--color-bodrum-blue)] text-[var(--color-charcoal)] text-sm font-semibold tracking-widest uppercase hover:bg-[var(--color-bodrum-blue-dark)] hover:text-white transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue-dark)] rounded-sm"
             >
               {dict.common.phone}
             </a>
