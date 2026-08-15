@@ -6,46 +6,40 @@ import { getDictionary } from '@/i18n';
 import { routeMap } from '@/i18n/routes';
 
 interface ServicesDropdownProps {
-  isOpen: boolean;
   onClose: () => void;
   lang: Locale;
 }
 
-export default function ServicesDropdown({ isOpen, onClose, lang }: ServicesDropdownProps) {
+export default function ServicesDropdown({ onClose, lang }: ServicesDropdownProps) {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const dict = getDictionary(lang);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && isOpen) {
+      if (e.key === 'Escape') {
         onClose();
       }
     };
 
-    if (isOpen) {
-      document.addEventListener('keydown', handleKeyDown);
-    }
+    document.addEventListener('keydown', handleKeyDown);
 
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
     };
-  }, [isOpen, onClose]);
+  }, [onClose]);
 
   const services = [
     {
       title: dict.nav.serviceDropdown.electrical,
-      href: routeMap.electrical[lang],
-      description: dict.about.expertise.electroMechanical
+      href: routeMap.electrical[lang]
     },
     {
       title: dict.nav.serviceDropdown.mechanical,
-      href: routeMap.mechanical[lang],
-      description: dict.about.expertise.electroMechanical
+      href: routeMap.mechanical[lang]
     },
     {
       title: dict.nav.serviceDropdown.finishing,
-      href: routeMap.finishing[lang],
-      description: dict.about.expertise.decoration
+      href: routeMap.finishing[lang]
     }
   ];
 
@@ -53,36 +47,30 @@ export default function ServicesDropdown({ isOpen, onClose, lang }: ServicesDrop
     <div 
       id="services-dropdown"
       ref={dropdownRef}
-      className={`absolute top-full left-0 w-full bg-[var(--color-white)] border-t border-[var(--color-medium-gray)] shadow-sm overflow-hidden transition-all duration-300 ease-in-out z-40
-        ${isOpen ? 'max-h-[500px] py-12 opacity-100' : 'max-h-0 py-0 opacity-0 border-t-0 pointer-events-none'}
-      `}
+      data-testid="desktop-services-dropdown"
+      className="absolute top-full right-0 w-[760px] max-w-[calc(100vw-32px)] bg-[var(--color-white)] border-t border-[var(--color-medium-gray)] shadow-lg overflow-hidden z-[120] pointer-events-auto rounded-bl-xl rounded-br-xl"
     >
-      <div className="px-6 md:px-12 lg:px-20 2xl:px-32 max-w-[1440px] mx-auto">
-        <div className="flex flex-col md:flex-row gap-8 lg:gap-16 justify-between">
+      <div className="py-6 px-8">
+        <div className="grid grid-cols-4 gap-6 items-center">
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 flex-1">
-            {services.map((service, index) => (
-              <Link 
-                key={index}
-                href={service.href}
-                onClick={onClose}
-                className="group flex flex-col items-start p-4 -ml-4 hover:bg-[var(--color-light-gray)] rounded transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue)]"
-              >
-                <h3 className="text-sm lg:text-base font-bold text-[var(--color-charcoal)] group-hover:text-[var(--color-bodrum-blue)] transition-colors duration-300 mb-1 uppercase">
-                  {service.title}
-                </h3>
-                <p className="text-xs lg:text-sm text-[var(--color-graphite)]/80 group-hover:text-[var(--color-graphite)] transition-colors duration-300">
-                  {service.description}
-                </p>
-              </Link>
-            ))}
-          </div>
+          {services.map((service, index) => (
+            <Link 
+              key={index}
+              href={service.href}
+              onClick={onClose}
+              className="min-w-0 group flex flex-col items-start p-3 -m-3 hover:bg-[var(--color-light-gray)] rounded transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue)]"
+            >
+              <h3 className="text-sm font-bold leading-tight break-normal text-[var(--color-charcoal)] group-hover:text-[var(--color-bodrum-blue)] transition-colors duration-300 uppercase">
+                {service.title}
+              </h3>
+            </Link>
+          ))}
 
-          <div className="flex flex-col md:items-end justify-center pt-8 md:pt-0 border-t md:border-t-0 border-[var(--color-medium-gray)] md:border-l md:pl-16">
+          <div className="min-w-0 flex flex-col items-start justify-center h-full border-l border-[var(--color-medium-gray)] pl-6 ml-2">
             <Link
               href={routeMap.services[lang]}
               onClick={onClose}
-              className="group inline-flex items-center text-xs lg:text-sm font-semibold tracking-widest text-[var(--color-charcoal)] hover:text-[var(--color-bodrum-blue)] transition-colors duration-300 uppercase focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue)] p-2 -ml-2 md:ml-0"
+              className="group inline-flex items-center text-sm font-semibold tracking-widest text-[var(--color-charcoal)] hover:text-[var(--color-bodrum-blue)] transition-colors duration-300 uppercase focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue)] p-2 -ml-2"
             >
               {dict.common.all}
               <span className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>

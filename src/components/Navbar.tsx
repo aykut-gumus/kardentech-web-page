@@ -19,6 +19,7 @@ export default function Navbar({ lang }: { lang: Locale }) {
   const dict = getDictionary(lang);
   const pageId = getPageIdFromPath(pathname);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const servicesMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setIsServicesOpen(false);
@@ -27,14 +28,19 @@ export default function Navbar({ lang }: { lang: Locale }) {
   }, [pathname]);
 
   useEffect(() => {
+    if (!isServicesOpen) return;
+
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        servicesMenuRef.current &&
+        !servicesMenuRef.current.contains(event.target as Node)
+      ) {
         setIsServicesOpen(false);
       }
     };
-    if (isServicesOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
@@ -51,17 +57,13 @@ export default function Navbar({ lang }: { lang: Locale }) {
     };
   }, [isMobileMenuOpen]);
 
-  const toggleServices = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setIsServicesOpen(!isServicesOpen);
-  };
+
 
   const isServicesActive = ['services', 'electrical', 'mechanical', 'finishing'].includes(pageId);
   const isReferencesActive = pageId === 'references' || pageId === 'dynamic-reference';
 
   return (
-    <div className="relative z-50 bg-[var(--color-white)] shadow-sm shrink-0" ref={dropdownRef}>
+    <div className="relative z-[100] bg-[var(--color-white)] shadow-sm shrink-0" ref={dropdownRef}>
       <nav className="flex items-center justify-between px-6 md:px-12 lg:px-20 2xl:px-32 h-[80px]">
         {/* Logo */}
         <Link 
@@ -89,7 +91,7 @@ export default function Navbar({ lang }: { lang: Locale }) {
         </button>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-[var(--color-charcoal)] relative z-50">
+        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-[var(--color-charcoal)] relative z-[100]">
           <Link 
             href={routeMap.home[lang]} 
             onClick={() => setIsServicesOpen(false)}
@@ -107,16 +109,25 @@ export default function Navbar({ lang }: { lang: Locale }) {
             <span className={`absolute bottom-0 left-0 h-[2px] bg-[var(--color-bodrum-blue)] transition-all ${pageId === 'about' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
           </Link>
           
-          <button 
-            onClick={toggleServices}
-            aria-expanded={isServicesOpen}
-            aria-controls="services-dropdown"
-            className={`cursor-pointer flex items-center gap-1 transition-colors relative group py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue)] rounded-sm ${isServicesOpen ? 'text-[var(--color-bodrum-blue-dark)]/80' : ''} ${isServicesActive ? 'text-[var(--color-bodrum-blue-dark)]' : 'hover:text-[var(--color-bodrum-blue-dark)]'}`}
-          >
-            {dict.nav.services}
-            <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} />
-            <span className={`absolute bottom-0 left-0 h-[2px] bg-[var(--color-bodrum-blue)] transition-all ${isServicesActive ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
-          </button>
+          <div ref={servicesMenuRef}>
+            <button 
+              type="button"
+              onClick={() => setIsServicesOpen(prev => !prev)}
+              aria-expanded={isServicesOpen}
+              aria-haspopup="menu"
+              className={`relative z-[110] pointer-events-auto cursor-pointer flex items-center gap-1 transition-colors group py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue)] rounded-sm ${isServicesOpen ? 'text-[var(--color-bodrum-blue-dark)]/80' : ''} ${isServicesActive ? 'text-[var(--color-bodrum-blue-dark)]' : 'hover:text-[var(--color-bodrum-blue-dark)]'}`}
+              data-testid="desktop-services-trigger"
+            >
+              {dict.nav.services}
+              <ChevronDown className={`pointer-events-none w-4 h-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} />
+              <span className={`pointer-events-none absolute bottom-0 left-0 h-[2px] bg-[var(--color-bodrum-blue)] transition-all ${isServicesActive ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+            </button>
+
+            {/* Desktop Dropdown */}
+            {isServicesOpen && (
+              <ServicesDropdown onClose={() => setIsServicesOpen(false)} lang={lang} />
+            )}
+          </div>
           
           <Link 
             href={routeMap.references[lang]} 
@@ -214,18 +225,7 @@ export default function Navbar({ lang }: { lang: Locale }) {
         </div>
       )}
 
-      {/* Desktop Dropdown Overlay */}
-      {isServicesOpen && (
-        <div 
-          className="hidden md:block fixed inset-0 top-[116px] bg-black/0 z-30"
-          onClick={() => setIsServicesOpen(false)}
-        />
-      )}
 
-      {/* Desktop Dropdown */}
-      <div className="hidden md:block">
-        <ServicesDropdown isOpen={isServicesOpen} onClose={() => setIsServicesOpen(false)} lang={lang} />
-      </div>
     </div>
   );
 }
