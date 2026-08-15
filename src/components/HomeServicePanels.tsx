@@ -33,7 +33,7 @@ export default function HomeServicePanels({ lang }: { lang: Locale }) {
           
           <div className="absolute inset-0 z-20 flex flex-col justify-center px-7">
             <div className="w-[40px] h-[3px] bg-white mb-4 transition-all duration-500 group-hover:w-[60px]" />
-            <h2 className="text-2xl font-bold text-white mb-2 uppercase leading-tight font-heading break-words">
+            <h2 className="text-2xl font-medium font-[family-name:var(--font-nunito-sans)] tracking-[-0.005em] text-white mb-2 uppercase leading-[1.08] break-words">
               {dict.services.categories.electrical.title}
             </h2>
             <div className="flex items-center text-white/80 group-hover:text-white transition-colors duration-400 font-medium tracking-wider text-xs uppercase mt-2">
@@ -56,7 +56,7 @@ export default function HomeServicePanels({ lang }: { lang: Locale }) {
           
           <div className="absolute inset-0 z-20 flex flex-col justify-center px-7">
             <div className="w-[40px] h-[3px] bg-white mb-4 transition-all duration-500 group-hover:w-[60px]" />
-            <h2 className="text-2xl font-bold text-white mb-2 uppercase leading-tight font-heading break-words">
+            <h2 className="text-2xl font-medium font-[family-name:var(--font-nunito-sans)] tracking-[-0.005em] text-white mb-2 uppercase leading-[1.08] break-words">
               {dict.services.categories.mechanical.title}
             </h2>
             <div className="flex items-center text-white/80 group-hover:text-white transition-colors duration-400 font-medium tracking-wider text-xs uppercase mt-2">
@@ -79,7 +79,7 @@ export default function HomeServicePanels({ lang }: { lang: Locale }) {
           
           <div className="absolute inset-0 z-20 flex flex-col justify-center px-7">
             <div className="w-[40px] h-[3px] bg-white mb-4 transition-all duration-500 group-hover:w-[60px]" />
-            <h2 className="text-2xl font-bold text-white mb-2 uppercase leading-tight font-heading break-words">
+            <h2 className="text-2xl font-medium font-[family-name:var(--font-nunito-sans)] tracking-[-0.005em] text-white mb-2 uppercase leading-[1.08] break-words">
               {dict.services.categories.finishing.title}
             </h2>
             <div className="flex items-center text-white/80 group-hover:text-white transition-colors duration-400 font-medium tracking-wider text-xs uppercase mt-2">
@@ -131,7 +131,7 @@ export default function HomeServicePanels({ lang }: { lang: Locale }) {
           {/* LAYER 5: Text */}
           <div className="absolute z-10 flex flex-col pointer-events-none" style={{ left: '6%', top: '18%' }}>
             <div className="w-[40px] h-[3px] bg-white/70 mb-4 transition-all duration-500 group-hover:w-[60px] group-hover:bg-white" />
-            <h2 className="text-3xl lg:text-4xl 2xl:text-5xl font-bold text-white mb-2 uppercase leading-tight font-heading drop-shadow-md">
+            <h2 className="text-3xl lg:text-4xl 2xl:text-5xl font-medium font-[family-name:var(--font-nunito-sans)] tracking-[-0.005em] text-white mb-2 uppercase leading-[1.08] drop-shadow-md">
               {dict.services.categories.electrical.title}
             </h2>
             <div className="flex items-center text-white/80 group-hover:text-white transition-colors duration-400 font-medium tracking-wider text-xs lg:text-sm uppercase mt-4 drop-shadow-sm">
@@ -174,7 +174,7 @@ export default function HomeServicePanels({ lang }: { lang: Locale }) {
           {/* LAYER 5: Text */}
           <div className="absolute z-10 flex flex-col pointer-events-none" style={{ left: '6%', top: '68%' }}>
             <div className="w-[40px] h-[3px] bg-white/70 mb-4 transition-all duration-500 group-hover:w-[60px] group-hover:bg-white" />
-            <h2 className="text-3xl lg:text-4xl 2xl:text-5xl font-bold text-white mb-2 uppercase leading-tight font-heading drop-shadow-md">
+            <h2 className="text-3xl lg:text-4xl 2xl:text-5xl font-medium font-[family-name:var(--font-nunito-sans)] tracking-[-0.005em] text-white mb-2 uppercase leading-[1.08] drop-shadow-md">
               {dict.services.categories.mechanical.title}
             </h2>
             <div className="flex items-center text-white/80 group-hover:text-white transition-colors duration-400 font-medium tracking-wider text-xs lg:text-sm uppercase mt-4 drop-shadow-sm">
@@ -222,7 +222,7 @@ export default function HomeServicePanels({ lang }: { lang: Locale }) {
             }}
           >
             <div className={`w-[40px] h-[3px] bg-white/70 transition-all duration-500 group-hover:w-[60px] group-hover:bg-white ${(lang === 'ru' || lang === 'en') ? 'mb-6' : 'mb-7'}`} />
-            <h2 className={`text-3xl lg:text-4xl 2xl:text-5xl font-bold text-white uppercase font-heading drop-shadow-md ${(lang === 'ru' || lang === 'en') ? 'mb-6 leading-[1.05] text-center' : 'mb-7 leading-tight whitespace-nowrap'}`}>
+            <h2 className={`text-3xl lg:text-4xl 2xl:text-5xl font-medium font-[family-name:var(--font-nunito-sans)] tracking-[-0.005em] text-white uppercase drop-shadow-md ${(lang === 'ru' || lang === 'en') ? 'mb-6 leading-[1.08] text-center' : 'mb-7 leading-[1.08] whitespace-nowrap'}`}>
               {lang === 'en' ? (
                 <>FINISHING<br />WORKS</>
               ) : lang === 'ru' ? (

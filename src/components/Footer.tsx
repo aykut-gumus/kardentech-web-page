@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, MapPin } from 'lucide-react';
+import { Phone, MapPin, Mail } from 'lucide-react';
 import { Locale } from '@/i18n/types';
 import { getDictionary } from '@/i18n';
 
@@ -33,13 +33,17 @@ export default function Footer({ lang }: { lang: Locale }) {
       >
         <MapPin size={16} className="shrink-0 mt-0.5 md:mt-0 text-[var(--color-bodrum-blue-light)] md:text-current group-hover:text-[var(--color-bodrum-blue-light)] transition-colors" />
         <span className="leading-snug line-clamp-2 md:line-clamp-none">
-          Dirmil Mah. 6698 Sk. Küçük Sanayi Sitesi No: 12/13 Yalıkavak Bodrum/MUĞLA
+          Yalıkavak | Dirmil Mah. 6698 Sk. Küçük Sanayi Sitesi No: 12/13 Bodrum/MUĞLA
         </span>
       </a>
-      <div className="flex gap-6 items-center text-sm">
-        <a href="tel:05320609072" className="flex items-center gap-2 hover:text-[var(--color-bodrum-blue-light)] transition-colors">
+      <div className="flex flex-wrap gap-4 md:gap-6 items-center text-sm">
+        <a href="mailto:info@kardentech.com" className="flex items-center gap-2 hover:text-[var(--color-bodrum-blue-light)] transition-colors">
+          <Mail size={16} />
+          <span>info@kardentech.com</span>
+        </a>
+        <a href="tel:+905320609072" className="flex items-center gap-2 hover:text-[var(--color-bodrum-blue-light)] transition-colors">
           <Phone size={16} />
-          <span>0532 060 90 72</span>
+          <span>+90 532 060 90 72</span>
         </a>
         <a href="https://instagram.com/kardentech" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-[var(--color-bodrum-blue-light)] transition-colors">
           <InstagramIcon />

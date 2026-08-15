@@ -26,9 +26,7 @@ export default function ContactMain({ lang }: { lang: Locale }) {
                   {dict.contact.info.address}
                 </h3>
                 <address className="not-italic text-base md:text-lg text-[var(--color-charcoal)] font-medium leading-relaxed mb-3">
-                  Dirmil Mah. 6698 Sk.<br />
-                  Küçük Sanayi Sitesi No: 12/13<br />
-                  Yalıkavak Bodrum/MUĞLA
+                  Yalıkavak | Dirmil Mah. 6698 Sk. Küçük Sanayi Sitesi No: 12/13 Bodrum/MUĞLA
                 </address>
                 <a 
                   href="https://maps.app.goo.gl/JFnSd92f3UvoxZAr5" 
@@ -50,12 +48,12 @@ export default function ContactMain({ lang }: { lang: Locale }) {
                   {dict.contact.info.phone}
                 </h3>
                 <div className="text-base md:text-lg text-[var(--color-charcoal)] font-medium mb-3">
-                  0532 060 90 72
+                  +90 532 060 90 72
                 </div>
                 <div className="flex flex-wrap gap-4">
                   <a 
                     href="tel:+905320609072" 
-                    aria-label="0532 060 90 72"
+                    aria-label="+90 532 060 90 72"
                     className="group inline-flex items-center text-xs font-semibold tracking-wider text-[var(--color-bodrum-blue)] uppercase focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue)] rounded-sm w-fit"
                   >
                     {dict.contact.info.call}

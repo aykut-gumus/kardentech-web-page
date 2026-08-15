@@ -48,8 +48,7 @@ export default function ContactBottom({ lang }: { lang: Locale }) {
             </h2>
           </div>
           <address className="not-italic text-sm md:text-base text-white/80 leading-relaxed mb-6">
-            Dirmil Mah. 6698 Sk. Küçük Sanayi Sitesi No: 12/13<br />
-            Yalıkavak Bodrum/MUĞLA
+            Yalıkavak | Dirmil Mah. 6698 Sk. Küçük Sanayi Sitesi No: 12/13 Bodrum/MUĞLA
           </address>
           <a 
             href="https://maps.app.goo.gl/JFnSd92f3UvoxZAr5" 
