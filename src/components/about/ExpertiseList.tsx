@@ -6,7 +6,7 @@ export default function ExpertiseList({ lang }: { lang: Locale }) {
   const dict = getDictionary(lang);
   
   const expertises = [
-    { id: '01', title: dict.about.expertise.decoration },
+    { id: '01', title: dict.about.expertise.renovationOnly },
     { id: '02', title: dict.about.expertise.turnkey },
     { id: '03', title: dict.about.expertise.design },
     { id: '04', title: dict.about.expertise.electroMechanical },

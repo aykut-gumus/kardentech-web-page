@@ -36,6 +36,7 @@ export type Dictionary = {
     expertiseTitle: string;
     expertise: {
       decoration: string;
+      renovationOnly: string;
       turnkey: string;
       design: string;
       electroMechanical: string;

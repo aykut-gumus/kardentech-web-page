@@ -18,10 +18,17 @@ export default function HomeServicePanels({ lang }: { lang: Locale }) {
         MOBILE STACK (Visible only on mobile)
         ========================================
       */}
-      <div className="md:hidden flex flex-col w-full h-auto">
+      <div className="md:hidden flex flex-col w-full h-auto relative overflow-hidden bg-[rgba(126,182,224,0.65)]">
         
         {/* Panel 1 - Elektrik Sistemleri */}
-        <Link href={routeMap.electrical[lang]} className="relative block w-full h-[240px] overflow-hidden group border-b border-white/10">
+        <Link 
+          href={routeMap.electrical[lang]} 
+          className="relative block w-full h-[240px] overflow-hidden group"
+          style={{ 
+            clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 12px), 0 100%)',
+            WebkitClipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 12px), 0 100%)'
+          }}
+        >
           <Image 
             src="/images/projects/baia-bodrum-hotel/01.jpg" 
             alt={dict.services.categories.electrical.title} 
@@ -44,7 +51,15 @@ export default function HomeServicePanels({ lang }: { lang: Locale }) {
         </Link>
 
         {/* Panel 2 - Mekanik Sistemler */}
-        <Link href={routeMap.mechanical[lang]} className="relative block w-full h-[240px] overflow-hidden group border-b border-white/10">
+        <Link 
+          href={routeMap.mechanical[lang]} 
+          className="relative block w-full h-[240px] overflow-hidden group"
+          style={{ 
+            clipPath: 'polygon(0 12px, 100% 0, 100% 100%, 0 calc(100% - 12px))',
+            WebkitClipPath: 'polygon(0 12px, 100% 0, 100% 100%, 0 calc(100% - 12px))',
+            marginTop: '-10px'
+          }}
+        >
           <Image 
             src="/images/projects/sekerpinar-fabrikasi/02.jpg" 
             alt={dict.services.categories.mechanical.title} 
@@ -67,7 +82,15 @@ export default function HomeServicePanels({ lang }: { lang: Locale }) {
         </Link>
 
         {/* Panel 3 - İnce İşler */}
-        <Link href={routeMap.finishing[lang]} className="relative block w-full h-[240px] overflow-hidden group">
+        <Link 
+          href={routeMap.finishing[lang]} 
+          className="relative block w-full h-[240px] overflow-hidden group"
+          style={{ 
+            clipPath: 'polygon(0 0, 100% 12px, 100% 100%, 0 100%)',
+            WebkitClipPath: 'polygon(0 0, 100% 12px, 100% 100%, 0 100%)',
+            marginTop: '-10px'
+          }}
+        >
           <Image 
             src="/images/projects/y-uzun-homes/01.jpg" 
             alt={dict.services.categories.finishing.title} 
@@ -88,6 +111,8 @@ export default function HomeServicePanels({ lang }: { lang: Locale }) {
             </div>
           </div>
         </Link>
+
+
 
       </div>
 

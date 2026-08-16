@@ -13,6 +13,7 @@ export type Project = {
   images: string[];
   summary?: LocalizedText;
   location?: LocalizedText;
+  city: string;
 };
 
 export const projects: Project[] = [
@@ -25,6 +26,7 @@ export const projects: Project[] = [
       ru: 'Виллы Quadro'
     },
     category: 'Konut',
+    city: 'Bodrum',
     coverImage: '/images/projects/quadro-villalari/01.jpg',
     images: [
       '/images/projects/quadro-villalari/01.jpg',
@@ -50,6 +52,7 @@ export const projects: Project[] = [
       ru: 'Mercedes Benz Hasmer'
     },
     category: 'Ticari / Showroom',
+    city: 'Antalya',
     coverImage: '/images/projects/mercedes-benz-hasmer/01.jpg',
     images: [
       '/images/projects/mercedes-benz-hasmer/01.jpg',
@@ -77,6 +80,7 @@ export const projects: Project[] = [
       ru: 'Suyalı Yalıkavak'
     },
     category: 'Konut',
+    city: 'Bodrum',
     coverImage: '/images/projects/suyali-yalikavak/02.jpg',
     images: [
       '/images/projects/suyali-yalikavak/01.jpg',
@@ -101,6 +105,7 @@ export const projects: Project[] = [
       ru: 'Y. Uzun Home\'s'
     },
     category: 'Konut',
+    city: 'Bodrum',
     coverImage: '/images/projects/y-uzun-homes/01.jpg',
     images: [
       '/images/projects/y-uzun-homes/01.jpg',
@@ -125,6 +130,7 @@ export const projects: Project[] = [
       ru: 'Baia Bodrum Hotel'
     },
     category: 'Otel',
+    city: 'Bodrum',
     coverImage: '/images/projects/baia-bodrum-hotel/01.jpg',
     images: [
       '/images/projects/baia-bodrum-hotel/01.jpg',
@@ -150,6 +156,7 @@ export const projects: Project[] = [
       ru: 'Фабрика Şekerpınar'
     },
     category: 'Endüstriyel',
+    city: 'Kocaeli',
     coverImage: '/images/projects/sekerpinar-fabrikasi/01.jpg',
     images: [
       '/images/projects/sekerpinar-fabrikasi/01.jpg',

@@ -61,7 +61,7 @@ export default async function ProjectDetailPageEN({ params }: PageProps) {
           <div className="text-[12px] md:text-sm font-semibold tracking-[0.2em] text-[var(--color-bodrum-blue-light)] uppercase mb-4">
             {translatedCategory}
           </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight font-heading max-w-4xl uppercase">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl font-medium font-[family-name:var(--font-nunito-sans)] tracking-[-0.005em] leading-[1.08] text-white max-w-4xl uppercase">
             {project.title.en}
           </h1>
           {project.location?.en && (

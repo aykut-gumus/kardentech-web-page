@@ -36,6 +36,7 @@ export const ru: Dictionary = {
     expertiseTitle: 'НАШИ КОМПЕТЕНЦИИ',
     expertise: {
       decoration: 'ДЕКОРИРОВАНИЕ — РЕНОВАЦИЯ',
+      renovationOnly: 'РЕНОВАЦИЯ',
       turnkey: 'ПРОЕКТЫ ПОД КЛЮЧ',
       design: 'ПРОЕКТИРОВАНИЕ, ИНЖИНИРИНГ И КОНСАЛТИНГ',
       electroMechanical: 'ЭЛЕКТРИЧЕСКИЕ И МЕХАНИЧЕСКИЕ ПРИМЕНЕНИЯ',

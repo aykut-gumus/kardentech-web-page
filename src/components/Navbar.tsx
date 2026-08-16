@@ -10,6 +10,14 @@ import { Locale } from '@/i18n/types';
 import { getDictionary } from '@/i18n';
 import { routeMap, getPageIdFromPath } from '@/i18n/routes';
 
+import { Tangerine } from 'next/font/google';
+
+const tangerine = Tangerine({ 
+  weight: ['400', '700'], 
+  subsets: ['latin'], 
+  display: 'swap' 
+});
+
 export default function Navbar({ lang }: { lang: Locale }) {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -69,21 +77,27 @@ export default function Navbar({ lang }: { lang: Locale }) {
         <Link 
           href={routeMap.home[lang]} 
           onClick={() => { setIsServicesOpen(false); setIsMobileMenuOpen(false); }}
-          className="block relative z-50 hover:opacity-90 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue)] rounded-sm p-1 -m-1 h-[45px] md:h-[55px] w-[145px] md:w-[180px] lg:w-[210px] 2xl:w-[230px]"
+          className="flex items-center gap-2 md:gap-[10px] relative z-50 hover:opacity-90 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue)] rounded-sm p-1 -m-1"
         >
           <Image 
             src="/images/brand/kardentech-logo-company.jpeg" 
             alt="Kardentech Logo" 
-            fill
+            width={1330}
+            height={446}
             priority
-            className="object-contain object-left"
+            className="h-[45px] md:h-[55px] w-auto object-contain"
           />
+          {pageId === 'home' && (
+            <span className={`${tangerine.className} text-[var(--color-bodrum-blue)] text-[32px] md:text-[42px] lg:text-[44px] 2xl:text-[48px] translate-y-[2px] md:translate-y-[3px]`}>
+              Bodrum
+            </span>
+          )}
         </Link>
 
         {/* Mobile Hamburger Button */}
         <button 
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
-          className="md:hidden p-2 text-[var(--color-charcoal)] focus:outline-none z-50 rounded-sm focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue)]"
+          className="min-[860px]:hidden p-2 text-[var(--color-charcoal)] focus:outline-none z-50 rounded-sm focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue)]"
           aria-label="Toggle menu" 
           aria-expanded={isMobileMenuOpen}
         >
@@ -91,7 +105,7 @@ export default function Navbar({ lang }: { lang: Locale }) {
         </button>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-[var(--color-charcoal)] relative z-[100]">
+        <div className="hidden min-[860px]:flex items-center gap-8 text-sm font-medium text-[var(--color-charcoal)] relative z-[100] whitespace-nowrap">
           <Link 
             href={routeMap.home[lang]} 
             onClick={() => setIsServicesOpen(false)}
@@ -151,14 +165,14 @@ export default function Navbar({ lang }: { lang: Locale }) {
       {/* Mobile Menu Backdrop */}
       {isMobileMenuOpen && (
         <div 
-          className="md:hidden fixed inset-0 top-[80px] bg-black/[0.03] z-30"
+          className="min-[860px]:hidden fixed inset-0 top-[80px] bg-black/[0.03] z-30"
           onClick={() => setIsMobileMenuOpen(false)}
         />
       )}
 
       {/* Mobile Menu Dropdown Panel */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full right-0 w-[62vw] max-w-[260px] bg-[#22272B]/70 backdrop-blur-lg z-40 rounded-bl-xl shadow-xl border-l border-white/10 overflow-hidden">
+        <div className="min-[860px]:hidden absolute top-full right-0 w-[62vw] max-w-[260px] bg-[#22272B]/70 backdrop-blur-lg z-40 rounded-bl-xl shadow-xl border-l border-white/10 overflow-hidden">
           <div className="flex flex-col py-2 text-[17px] font-medium text-white/90">
             <Link 
               href={routeMap.home[lang]} 

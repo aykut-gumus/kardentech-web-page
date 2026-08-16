@@ -31,10 +31,10 @@ export default function ProjectGrid({ lang }: { lang: Locale }) {
   };
 
   return (
-    <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20 2xl:px-32 py-12 md:py-20 flex-1 flex flex-col">
+    <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20 2xl:px-32 pt-12 md:pt-20 pb-8 md:pb-12 flex-1 flex flex-col">
       {/* Header */}
       <div className="mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold text-[var(--color-charcoal)] mb-4 font-heading tracking-tight uppercase">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl font-medium font-[family-name:var(--font-nunito-sans)] tracking-[-0.005em] leading-[1.08] text-[var(--color-charcoal)] mb-4 uppercase">
           {dict.nav.references}
         </h1>
         <p className="text-[var(--color-graphite)] text-lg">
@@ -63,7 +63,7 @@ export default function ProjectGrid({ lang }: { lang: Locale }) {
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 pb-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
         {filteredProjects.map((project) => (
           <Link
             key={project.id}
@@ -91,7 +91,7 @@ export default function ProjectGrid({ lang }: { lang: Locale }) {
                  project.category}
               </div>
               <h3 className="text-xl font-bold text-[var(--color-charcoal)] group-hover:text-[var(--color-bodrum-blue)] transition-colors duration-300 font-heading">
-                {project.title[lang]}
+                {project.title[lang]} <span className="opacity-80 font-normal">/ {project.city}</span>
               </h3>
               
               <div className="flex items-center text-[var(--color-graphite)] group-hover:text-[var(--color-bodrum-blue)] transition-colors duration-300 font-medium tracking-wider text-xs mt-4 uppercase">

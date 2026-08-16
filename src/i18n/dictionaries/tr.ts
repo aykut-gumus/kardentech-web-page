@@ -36,6 +36,7 @@ export const tr: Dictionary = {
     expertiseTitle: 'UZMANLIK ALANLARIMIZ',
     expertise: {
       decoration: 'DEKORASYON — RENOVASYON',
+      renovationOnly: 'RENOVASYON',
       turnkey: 'ANAHTAR TESLİM PROJELER',
       design: 'TASARIM, MÜHENDİSLİK & DANIŞMANLIK',
       electroMechanical: 'ELEKTRİK & MEKANİK UYGULAMALAR',

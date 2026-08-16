@@ -36,6 +36,7 @@ export const en: Dictionary = {
     expertiseTitle: 'OUR EXPERTISE',
     expertise: {
       decoration: 'DECORATION — RENOVATION',
+      renovationOnly: 'RENOVATION',
       turnkey: 'TURNKEY PROJECTS',
       design: 'DESIGN, ENGINEERING & CONSULTANCY',
       electroMechanical: 'ELECTRICAL & MECHANICAL APPLICATIONS',
