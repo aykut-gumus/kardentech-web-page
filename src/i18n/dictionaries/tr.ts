@@ -17,8 +17,10 @@ export const tr: Dictionary = {
     contact: 'İletişim',
     serviceDropdown: {
       electrical: 'Elektrik Sistemleri',
-      mechanical: 'Mekanik Sistemler',
+      mechanical: 'Mekanik Sistemleri',
       finishing: 'İnce İşler',
+      technicalConsultancy: 'Teknik Danışmanlık',
+      solarEnergy: 'GES / İklimsa Bayilik',
     },
   },
   home: {
@@ -30,7 +32,7 @@ export const tr: Dictionary = {
   about: {
     slogan: 'Size uygun yaşanabilir mekanlar sunuyoruz.',
     intro: {
-      p1: 'Kardentech Mühendislik, kurucularının 25 yıllık sektör tecrübesiyle Bodrum merkezli olarak dekorasyon, mekanik ve elektrik tesisat taahhütleri ile tasarım ve proje danışmanlığı alanlarında hizmet vermektedir.',
+      p1: 'Kardentech Mühendislik, kurucularının 25 yıllık sektör tecrübesiyle Bodrum merkezli olarak renovasyon, mekanik ve elektrik tesisat taahhütleri ile tasarım ve proje danışmanlığı alanlarında hizmet vermektedir.',
       p2: 'Ulusal ve uluslararası vizyonumuzla prestijli projelere değer katıyor; müşteri odaklı ve yenilikçi mühendislik çözümleriyle sektörde fark yaratmayı hedefliyoruz.',
     },
     expertiseTitle: 'UZMANLIK ALANLARIMIZ',
@@ -39,7 +41,7 @@ export const tr: Dictionary = {
       renovationOnly: 'RENOVASYON',
       turnkey: 'ANAHTAR TESLİM PROJELER',
       design: 'TASARIM, MÜHENDİSLİK & DANIŞMANLIK',
-      electroMechanical: 'ELEKTRİK & MEKANİK UYGULAMALAR',
+      electroMechanical: 'ELEKTRİK & MEKANİK TESİSAT UYGULAMALARI',
     },
     experienceTitle: 'GÖREV ALDIĞIMIZ PROJELER',
   },

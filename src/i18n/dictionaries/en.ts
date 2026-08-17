@@ -19,6 +19,8 @@ export const en: Dictionary = {
       electrical: 'Electrical Systems',
       mechanical: 'Mechanical Systems',
       finishing: 'Finishing Works',
+      technicalConsultancy: 'Technical Consultancy',
+      solarEnergy: 'Solar Energy / Iklimsa Dealership',
     },
   },
   home: {
@@ -30,7 +32,7 @@ export const en: Dictionary = {
   about: {
     slogan: 'We Offer Livable Spaces Tailored to You.',
     intro: {
-      p1: 'Kardentech Engineering, with its founders\' 25 years of industry experience, provides services based in Bodrum in the fields of decoration, mechanical and electrical installation contracting, and design and project consultancy.',
+      p1: 'Kardentech Engineering, with its founders\' 25 years of industry experience, provides services based in Bodrum in the fields of renovation, mechanical and electrical installation contracting, and design and project consultancy.',
       p2: 'With our national and international vision, we add value to prestigious projects and aim to make a difference in the sector through customer-oriented and innovative engineering solutions.',
     },
     expertiseTitle: 'OUR EXPERTISE',
@@ -39,7 +41,7 @@ export const en: Dictionary = {
       renovationOnly: 'RENOVATION',
       turnkey: 'TURNKEY PROJECTS',
       design: 'DESIGN, ENGINEERING & CONSULTANCY',
-      electroMechanical: 'ELECTRICAL & MECHANICAL APPLICATIONS',
+      electroMechanical: 'ELECTRICAL & MECHANICAL INSTALLATION APPLICATIONS',
     },
     experienceTitle: 'INVOLVED PROJECTS',
   },

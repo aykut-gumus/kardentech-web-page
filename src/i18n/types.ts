@@ -19,6 +19,8 @@ export type Dictionary = {
       electrical: string;
       mechanical: string;
       finishing: string;
+      technicalConsultancy: string;
+      solarEnergy: string;
     };
   };
   home: {

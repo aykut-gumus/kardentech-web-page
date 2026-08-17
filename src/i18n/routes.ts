@@ -32,6 +32,16 @@ export const routeMap: Record<string, Record<Locale, string>> = {
     en: '/en/services/finishing-works',
     ru: '/ru/services/finishing-works',
   },
+  technicalConsultancy: {
+    tr: '/teknik-danismanlik',
+    en: '/en/services/technical-consultancy',
+    ru: '/ru/services/technical-consultancy',
+  },
+  solarEnergy: {
+    tr: '/ges-iklimsa-bayilik',
+    en: '/en/services/solar-energy',
+    ru: '/ru/services/solar-energy',
+  },
   references: {
     tr: '/referanslar',
     en: '/en/references',

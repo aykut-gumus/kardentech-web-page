@@ -123,10 +123,15 @@ export default function Navbar({ lang }: { lang: Locale }) {
             <span className={`absolute bottom-0 left-0 h-[2px] bg-[var(--color-bodrum-blue)] transition-all ${pageId === 'about' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
           </Link>
           
-          <div ref={servicesMenuRef}>
-            <button 
-              type="button"
-              onClick={() => setIsServicesOpen(prev => !prev)}
+          <div 
+            ref={servicesMenuRef}
+            onMouseEnter={() => setIsServicesOpen(true)}
+            onMouseLeave={() => setIsServicesOpen(false)}
+            className="relative"
+          >
+            <Link 
+              href={routeMap.services[lang]}
+              onClick={() => setIsServicesOpen(false)}
               aria-expanded={isServicesOpen}
               aria-haspopup="menu"
               className={`relative z-[110] pointer-events-auto cursor-pointer flex items-center gap-1 transition-colors group py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue)] rounded-sm ${isServicesOpen ? 'text-[var(--color-bodrum-blue-dark)]/80' : ''} ${isServicesActive ? 'text-[var(--color-bodrum-blue-dark)]' : 'hover:text-[var(--color-bodrum-blue-dark)]'}`}
@@ -135,7 +140,7 @@ export default function Navbar({ lang }: { lang: Locale }) {
               {dict.nav.services}
               <ChevronDown className={`pointer-events-none w-4 h-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} />
               <span className={`pointer-events-none absolute bottom-0 left-0 h-[2px] bg-[var(--color-bodrum-blue)] transition-all ${isServicesActive ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
-            </button>
+            </Link>
 
             {/* Desktop Dropdown */}
             {isServicesOpen && (
@@ -201,21 +206,38 @@ export default function Navbar({ lang }: { lang: Locale }) {
                 <div className="flex flex-col bg-black/10 text-[15px] border-r border-[var(--color-bodrum-blue)]/40">
                   <Link 
                     href={routeMap.electrical[lang]} 
+                    onClick={() => setIsMobileMenuOpen(false)}
                     className={`block px-5 py-3 text-right transition-colors duration-200 focus:outline-none hover:bg-white/5 ${pageId === 'electrical' ? 'text-[var(--color-bodrum-blue)]' : 'text-white/80'}`}
                   >
-                    {dict.services.categories.electrical.title}
+                    {dict.nav.serviceDropdown.electrical}
                   </Link>
                   <Link 
                     href={routeMap.mechanical[lang]} 
+                    onClick={() => setIsMobileMenuOpen(false)}
                     className={`block px-5 py-3 text-right transition-colors duration-200 focus:outline-none hover:bg-white/5 ${pageId === 'mechanical' ? 'text-[var(--color-bodrum-blue)]' : 'text-white/80'}`}
                   >
-                    {dict.services.categories.mechanical.title}
+                    {dict.nav.serviceDropdown.mechanical}
                   </Link>
                   <Link 
                     href={routeMap.finishing[lang]} 
+                    onClick={() => setIsMobileMenuOpen(false)}
                     className={`block px-5 py-3 text-right transition-colors duration-200 focus:outline-none hover:bg-white/5 ${pageId === 'finishing' ? 'text-[var(--color-bodrum-blue)]' : 'text-white/80'}`}
                   >
-                    {dict.services.categories.finishing.title}
+                    {dict.nav.serviceDropdown.finishing}
+                  </Link>
+                  <Link 
+                    href={routeMap.technicalConsultancy[lang]} 
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`block px-5 py-3 text-right transition-colors duration-200 focus:outline-none hover:bg-white/5 ${pageId === 'technicalConsultancy' ? 'text-[var(--color-bodrum-blue)]' : 'text-white/80'}`}
+                  >
+                    {dict.nav.serviceDropdown.technicalConsultancy}
+                  </Link>
+                  <Link 
+                    href={routeMap.solarEnergy[lang]} 
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`block px-5 py-3 text-right transition-colors duration-200 focus:outline-none hover:bg-white/5 ${pageId === 'solarEnergy' ? 'text-[var(--color-bodrum-blue)]' : 'text-white/80'}`}
+                  >
+                    {dict.nav.serviceDropdown.solarEnergy}
                   </Link>
                 </div>
               )}
