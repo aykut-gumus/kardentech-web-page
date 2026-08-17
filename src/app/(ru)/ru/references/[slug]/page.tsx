@@ -60,7 +60,7 @@ export default async function ProjectDetailPageRU({ params }: PageProps) {
           <div className="text-[12px] md:text-sm font-semibold tracking-[0.2em] text-[var(--color-bodrum-blue-light)] uppercase mb-4">
             {translatedCategory}
           </div>
-          <h1 className="text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl font-medium font-[family-name:var(--font-nunito-sans)] tracking-[-0.005em] leading-[1.08] text-white max-w-4xl uppercase">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl font-medium  tracking-[-0.005em] leading-[1.08] text-white max-w-4xl uppercase">
             {project.title.ru}
           </h1>
           {project.location?.ru && (
@@ -75,7 +75,7 @@ export default async function ProjectDetailPageRU({ params }: PageProps) {
       {project.summary?.ru && (
         <section className="w-full px-6 md:px-12 lg:px-20 2xl:px-32 py-12 md:py-16">
           <div className="max-w-3xl">
-            <h2 className="text-2xl font-bold text-[var(--color-charcoal)] mb-6 font-heading uppercase">
+            <h2 className="text-2xl font-bold text-[var(--color-charcoal)] mb-6  uppercase">
               О проекте
             </h2>
             <p className="text-[var(--color-graphite)] leading-relaxed md:text-lg">
@@ -87,7 +87,7 @@ export default async function ProjectDetailPageRU({ params }: PageProps) {
 
       {/* Gallery Section */}
       <section className="w-full px-6 md:px-12 lg:px-20 2xl:px-32 pb-20 md:pb-24">
-        <h2 className="text-2xl font-bold text-[var(--color-charcoal)] mb-8 font-heading uppercase">
+        <h2 className="text-2xl font-bold text-[var(--color-charcoal)] mb-8  uppercase">
           Галерея
         </h2>
         <ProjectGallery images={project.images} projectTitle={project.title.ru} />

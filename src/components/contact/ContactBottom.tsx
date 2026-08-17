@@ -12,7 +12,7 @@ export default function ContactBottom({ lang }: { lang: Locale }) {
         
         {/* CTA Side */}
         <div className="flex flex-col max-w-2xl flex-1">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-heading leading-tight uppercase">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4  leading-tight uppercase">
             {dict.contact.bottom.title}
           </h2>
           <p className="text-white/80 text-base md:text-lg mb-8">
@@ -43,7 +43,7 @@ export default function ContactBottom({ lang }: { lang: Locale }) {
         <div className="flex flex-col flex-1 items-start md:items-end md:text-right">
           <div className="flex items-center md:flex-row-reverse gap-3 mb-4 text-white">
             <MapPin className="w-6 h-6 text-[var(--color-bodrum-blue)] shrink-0" strokeWidth={1.5} />
-            <h2 className="text-xl md:text-2xl font-bold font-heading tracking-tight">
+            <h2 className="text-xl md:text-2xl font-bold  tracking-tight">
               {dict.contact.bottom.location}
             </h2>
           </div>

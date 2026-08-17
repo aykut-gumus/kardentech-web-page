@@ -85,7 +85,7 @@ export default function ContactForm({ lang }: { lang: Locale }) {
 
   return (
     <div id="iletisim-formu" className="w-full flex flex-col">
-      <h2 className="text-xl md:text-2xl font-bold text-[var(--color-charcoal)] font-heading tracking-tight mb-8 uppercase">
+      <h2 className="text-xl md:text-2xl font-bold text-[var(--color-charcoal)]  tracking-tight mb-8 uppercase">
         {dict.contact.form.title}
       </h2>
 

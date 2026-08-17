@@ -67,7 +67,7 @@ export default function ServicesHero({ lang, pageId, images }: ServicesHeroProps
         <div className="text-[12px] md:text-sm font-semibold tracking-[0.2em] text-[var(--color-bodrum-blue-light)] uppercase mb-4">
           {dict.home.hero.title}
         </div>
-        <h1 className="text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl font-medium font-[family-name:var(--font-nunito-sans)] tracking-[-0.005em] leading-[1.08] text-white mb-4 max-w-4xl uppercase">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl font-medium  tracking-[-0.005em] leading-[1.08] text-white mb-4 max-w-4xl uppercase">
           {title}
         </h1>
         {statement && (

@@ -13,7 +13,7 @@ export default function ContactMain({ lang }: { lang: Locale }) {
         
         {/* Left Column: Info */}
         <div className="lg:col-span-5 flex flex-col">
-          <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-charcoal)] font-heading tracking-tight leading-tight mb-10 uppercase">
+          <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-charcoal)]  tracking-tight leading-tight mb-10 uppercase">
             {dict.common.contactUs}
           </h2>
           

@@ -13,7 +13,7 @@ export default function ServicesCTA({ lang }: { lang: Locale }) {
       <div className="absolute top-0 right-0 w-1/2 h-full bg-[#24313A] skew-x-12 translate-x-32"></div>
 
       <div className="max-w-[1440px] mx-auto w-full flex flex-col items-center text-center relative z-10">
-        <h2 className="text-3xl md:text-4xl font-script font-light text-white mb-8 tracking-wide max-w-[90%] md:max-w-none md:whitespace-nowrap">
+        <h2 className="text-3xl md:text-4xl  font-light text-white mb-8 tracking-wide max-w-[90%] md:max-w-none md:whitespace-nowrap">
           {dict.about.slogan}
         </h2>
         

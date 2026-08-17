@@ -105,7 +105,7 @@ export default function Navbar({ lang }: { lang: Locale }) {
         </button>
 
         {/* Desktop Links */}
-        <div className="hidden min-[860px]:flex items-center gap-8 text-sm font-medium text-[var(--color-charcoal)] relative z-[100] whitespace-nowrap">
+        <div className="hidden min-[860px]:flex items-center gap-8 text-[15px] font-medium text-[var(--color-charcoal)] relative z-[100] whitespace-nowrap">
           <Link 
             href={routeMap.home[lang]} 
             onClick={() => setIsServicesOpen(false)}
@@ -173,7 +173,7 @@ export default function Navbar({ lang }: { lang: Locale }) {
       {/* Mobile Menu Dropdown Panel */}
       {isMobileMenuOpen && (
         <div className="min-[860px]:hidden absolute top-full right-0 w-[62vw] max-w-[260px] bg-[#22272B]/70 backdrop-blur-lg z-40 rounded-bl-xl shadow-xl border-l border-white/10 overflow-hidden">
-          <div className="flex flex-col py-2 text-[17px] font-medium text-white/90">
+          <div className="flex flex-col py-2 text-[18px] font-medium text-white/95">
             <Link 
               href={routeMap.home[lang]} 
               className={`block px-5 py-3.5 text-right transition-colors duration-200 focus:outline-none hover:bg-white/5 border-r-2 ${pageId === 'home' ? 'text-[var(--color-bodrum-blue)] border-[var(--color-bodrum-blue)]' : 'border-transparent'}`}

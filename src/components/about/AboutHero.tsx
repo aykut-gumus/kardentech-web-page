@@ -45,7 +45,7 @@ export default function AboutHero({ lang }: { lang: Locale }) {
         <div className="text-[12px] md:text-sm font-semibold tracking-[0.2em] text-[var(--color-bodrum-blue-light)] uppercase mb-4">
           {dict.home.hero.title}
         </div>
-        <h1 className="text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl font-medium font-[family-name:var(--font-nunito-sans)] tracking-[-0.005em] leading-[1.08] text-white mb-4 uppercase">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl font-medium  tracking-[-0.005em] leading-[1.08] text-white mb-4 uppercase">
           {dict.nav.about}
         </h1>
         <p className="text-white/90 text-lg md:text-xl max-w-2xl font-light tracking-wide">

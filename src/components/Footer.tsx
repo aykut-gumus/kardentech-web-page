@@ -29,14 +29,14 @@ export default function Footer({ lang }: { lang: Locale }) {
         href="https://maps.app.goo.gl/JFnSd92f3UvoxZAr5"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-start md:items-center gap-2 text-xs md:text-sm font-medium hover:text-[var(--color-bodrum-blue-light)] transition-colors group cursor-pointer"
+        className="flex items-start md:items-center gap-2 text-[13px] md:text-[15px] font-medium hover:text-[var(--color-bodrum-blue-light)] transition-colors group cursor-pointer"
       >
         <MapPin size={16} className="shrink-0 mt-0.5 md:mt-0 text-[var(--color-bodrum-blue-light)] md:text-current group-hover:text-[var(--color-bodrum-blue-light)] transition-colors" />
-        <span className="leading-snug line-clamp-2 md:line-clamp-none">
+        <span className="leading-snug line-clamp-2 md:line-clamp-none text-[var(--color-white)]/90 md:text-[var(--color-white)]/100">
           Yalıkavak | Dirmil Mah. 6698 Sk. Küçük Sanayi Sitesi No: 12/13 Bodrum/MUĞLA
         </span>
       </a>
-      <div className="flex flex-wrap gap-4 md:gap-6 items-center text-sm">
+      <div className="flex flex-wrap gap-4 md:gap-6 items-center text-[13px] md:text-[15px] font-medium text-[var(--color-white)]/90 md:text-[var(--color-white)]/100">
         <a href="mailto:info@kardentech.com" className="flex items-center gap-2 hover:text-[var(--color-bodrum-blue-light)] transition-colors">
           <Mail size={16} />
           <span>info@kardentech.com</span>

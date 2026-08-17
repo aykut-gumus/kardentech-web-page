@@ -34,7 +34,7 @@ export default function ProjectGrid({ lang }: { lang: Locale }) {
     <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20 2xl:px-32 pt-12 md:pt-20 pb-8 md:pb-12 flex-1 flex flex-col">
       {/* Header */}
       <div className="mb-12">
-        <h1 className="text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl font-medium font-[family-name:var(--font-nunito-sans)] tracking-[-0.005em] leading-[1.08] text-[var(--color-charcoal)] mb-4 uppercase">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl font-medium  tracking-[-0.005em] leading-[1.08] text-[var(--color-charcoal)] mb-4 uppercase">
           {dict.nav.references}
         </h1>
         <p className="text-[var(--color-graphite)] text-lg">
@@ -90,7 +90,7 @@ export default function ProjectGrid({ lang }: { lang: Locale }) {
                  project.category === 'Endüstriyel' ? dict.references.filters.industrial :
                  project.category}
               </div>
-              <h3 className="text-xl font-bold text-[var(--color-charcoal)] group-hover:text-[var(--color-bodrum-blue)] transition-colors duration-300 font-heading">
+              <h3 className="text-xl font-bold text-[var(--color-charcoal)] group-hover:text-[var(--color-bodrum-blue)] transition-colors duration-300 ">
                 {project.title[lang]} <span className="opacity-80 font-normal">/ {project.city}</span>
               </h3>
               

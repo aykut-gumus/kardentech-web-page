@@ -164,7 +164,7 @@ function ProjectCard({ project, lang, displayNumber }: { project: { id: string, 
       
       <div className="flex flex-col h-full justify-center">
         <span className="text-[10px] md:text-xs font-bold text-[var(--color-bodrum-blue)] mb-2">{displayNumber}</span>
-        <h3 className="text-sm md:text-base font-bold text-[var(--color-charcoal)] leading-snug mb-1 font-heading pr-4 break-words">{project.name[lang]}</h3>
+        <h3 className="text-sm md:text-base font-bold text-[var(--color-charcoal)] leading-snug mb-1  pr-4 break-words">{project.name[lang]}</h3>
         <p className="text-xs text-[var(--color-graphite)]/80 font-medium uppercase tracking-wider mt-1">{project.location[lang]}</p>
       </div>
     </article>

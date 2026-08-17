@@ -25,7 +25,7 @@ export default function OfficialActivities({ lang }: { lang: Locale }) {
               key={item.id}
               className="flex flex-col md:flex-row md:items-center py-10 border-b border-[var(--color-medium-gray)]"
             >
-              <div className="text-4xl md:text-5xl font-light text-[var(--color-bodrum-blue)]/50 font-heading mb-4 md:mb-0 md:w-32">
+              <div className="text-4xl md:text-5xl font-light text-[var(--color-bodrum-blue)]/50  mb-4 md:mb-0 md:w-32">
                 {item.id}
               </div>
               <h3 className="text-xl md:text-2xl font-bold text-[var(--color-charcoal)] tracking-wide flex-1 uppercase">

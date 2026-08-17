@@ -25,7 +25,7 @@ export default function ExpertiseList({ lang }: { lang: Locale }) {
               key={item.id}
               className="flex flex-col md:flex-row md:items-center justify-between py-8 border-b border-[var(--color-medium-gray)] group hover:bg-[var(--color-white)] transition-colors duration-300"
             >
-              <div className="text-4xl md:text-6xl font-light text-[var(--color-graphite)]/30 font-heading mb-4 md:mb-0 md:w-32 group-hover:text-[var(--color-bodrum-blue)] transition-colors duration-300">
+              <div className="text-4xl md:text-6xl font-light text-[var(--color-graphite)]/30  mb-4 md:mb-0 md:w-32 group-hover:text-[var(--color-bodrum-blue)] transition-colors duration-300">
                 {item.id}
               </div>
               <h3 className="text-xl md:text-2xl font-bold text-[var(--color-charcoal)] tracking-wide group-hover:text-[var(--color-bodrum-blue)] transition-colors duration-300 flex-1 uppercase">
