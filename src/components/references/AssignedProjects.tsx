@@ -93,60 +93,34 @@ export default function AssignedProjects({ lang }: { lang: Locale }) {
     return 'GÖREV ALINAN PROJELER';
   };
 
-  const getIntlTitle = () => {
-    if (lang === 'en') return 'INTERNATIONAL';
-    if (lang === 'ru') return 'МЕЖДУНАРОДНЫЕ';
-    return 'YURTDIŞI';
-  };
-
-  const getDomTitle = () => {
-    if (lang === 'en') return 'DOMESTIC';
-    if (lang === 'ru') return 'ВНУТРЕННИЕ';
-    return 'YURTİÇİ';
-  };
-
-  const internationalProjects = assignedProjects.filter(p => !p.location.tr.includes('TÜRKİYE') && !p.location.tr.includes('İSTANBUL'));
-  const domesticProjects = assignedProjects.filter(p => p.location.tr.includes('TÜRKİYE') || p.location.tr.includes('İSTANBUL'));
-
-  const intLeft = internationalProjects.slice(0, 5);
-  const intRight = internationalProjects.slice(5, 10);
+  const col1 = assignedProjects.slice(0, 6);
+  const col2 = assignedProjects.slice(6, 11);
+  const col3 = assignedProjects.slice(11, 16);
 
   return (
     <section className="w-full pt-8 md:pt-12 pb-24 md:pb-32 relative">
-      <div className="max-w-[1200px] mx-auto px-5 md:px-12 lg:px-16">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20 2xl:px-32">
         <h2 className="text-[12px] md:text-sm font-semibold tracking-[0.2em] text-[var(--color-bodrum-blue)] uppercase mb-10">
           {getTitle()}
         </h2>
 
         {/* Desktop Grid */}
         <div className="hidden md:grid grid-cols-3 gap-x-6 lg:gap-x-8 gap-y-0">
-          {/* Group Headings */}
-          <div className="col-span-2 mb-4">
-            <h3 className="text-[11px] md:text-xs font-semibold tracking-[0.15em] text-[var(--color-bodrum-blue)]/90 uppercase">{getIntlTitle()}</h3>
-          </div>
-          <div className="col-span-1 mb-4">
-            <h3 className="text-[11px] md:text-xs font-semibold tracking-[0.15em] text-[var(--color-bodrum-blue)]/90 uppercase">{getDomTitle()}</h3>
-          </div>
-
           {/* Columns */}
           <div className="flex flex-col gap-y-4 md:gap-y-5">
-            {intLeft.map((proj, idx) => <ProjectCard key={proj.id} project={proj} lang={lang} displayNumber={String(idx + 1).padStart(2, '0')} />)}
+            {col1.map((proj, idx) => <ProjectCard key={proj.id} project={proj} lang={lang} displayNumber={String(idx + 1).padStart(2, '0')} />)}
           </div>
           <div className="flex flex-col gap-y-4 md:gap-y-5">
-            {intRight.map((proj, idx) => <ProjectCard key={proj.id} project={proj} lang={lang} displayNumber={String(idx + 6).padStart(2, '0')} />)}
+            {col2.map((proj, idx) => <ProjectCard key={proj.id} project={proj} lang={lang} displayNumber={String(idx + 7).padStart(2, '0')} />)}
           </div>
           <div className="flex flex-col gap-y-4 md:gap-y-5">
-            {domesticProjects.map((proj, idx) => <ProjectCard key={proj.id} project={proj} lang={lang} displayNumber={String(idx + 1).padStart(2, '0')} />)}
+            {col3.map((proj, idx) => <ProjectCard key={proj.id} project={proj} lang={lang} displayNumber={String(idx + 12).padStart(2, '0')} />)}
           </div>
         </div>
 
         {/* Mobile Grid */}
         <div className="md:hidden flex flex-col gap-y-4 w-full">
-          <h3 className="text-[11px] md:text-xs font-semibold tracking-[0.15em] text-[var(--color-bodrum-blue)]/90 uppercase mb-2 mt-2">{getIntlTitle()}</h3>
-          {internationalProjects.map((proj, idx) => <ProjectCard key={proj.id} project={proj} lang={lang} displayNumber={String(idx + 1).padStart(2, '0')} />)}
-          
-          <h3 className="text-[11px] md:text-xs font-semibold tracking-[0.15em] text-[var(--color-bodrum-blue)]/90 uppercase mb-2 mt-8">{getDomTitle()}</h3>
-          {domesticProjects.map((proj, idx) => <ProjectCard key={proj.id} project={proj} lang={lang} displayNumber={String(idx + 1).padStart(2, '0')} />)}
+          {assignedProjects.map((proj, idx) => <ProjectCard key={proj.id} project={proj} lang={lang} displayNumber={String(idx + 1).padStart(2, '0')} />)}
         </div>
       </div>
     </section>
@@ -154,18 +128,27 @@ export default function AssignedProjects({ lang }: { lang: Locale }) {
 }
 
 function ProjectCard({ project, lang, displayNumber }: { project: { id: string, name: Record<Locale, string>, location: Record<Locale, string> }, lang: Locale, displayNumber: string }) {
+  const imageUrl = `/images/references/${displayNumber}.jpg`;
+
   return (
-    <article className="relative bg-white border border-[var(--color-medium-gray)] rounded-xl px-5 py-5 group transition-transform duration-300 ease-out hover:-translate-y-[2px] overflow-hidden shadow-sm h-full">
+    <article className="relative bg-white border border-[var(--color-medium-gray)] rounded-xl px-5 py-5 group transition-transform duration-300 ease-out hover:-translate-y-[2px] overflow-hidden shadow-sm w-full aspect-[4/3]">
+      
+      {/* Background Image Overlay on Hover */}
+      <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none">
+        <div className="absolute inset-0 bg-black/60 z-10"></div>
+        <img src={imageUrl} alt={project.name[lang]} className="w-full h-full object-cover" />
+      </div>
+
       {/* Decorative Triangle */}
       <div 
-        className="absolute top-0 right-0 w-6 h-6 bg-[var(--color-bodrum-blue)] transition-transform duration-300 ease-out group-hover:translate-x-[2px] group-hover:-translate-y-[2px]" 
+        className="absolute top-0 right-0 w-6 h-6 bg-[var(--color-bodrum-blue)] transition-transform duration-300 ease-out group-hover:translate-x-[2px] group-hover:-translate-y-[2px] z-20" 
         style={{ clipPath: 'polygon(100% 0, 0 0, 100% 100%)' }}
       ></div>
       
-      <div className="flex flex-col h-full justify-center">
+      <div className="flex flex-col h-full justify-center relative z-20">
         <span className="text-[10px] md:text-xs font-bold text-[var(--color-bodrum-blue)] mb-2">{displayNumber}</span>
-        <h3 className="text-sm md:text-base font-bold text-[var(--color-charcoal)] leading-snug mb-1  pr-4 break-words">{project.name[lang]}</h3>
-        <p className="text-xs text-[var(--color-graphite)]/80 font-medium uppercase tracking-wider mt-1">{project.location[lang]}</p>
+        <h3 className="text-sm md:text-base font-bold text-[var(--color-charcoal)] group-hover:text-white leading-snug mb-1 pr-4 break-words transition-colors duration-300">{project.name[lang]}</h3>
+        <p className="text-xs text-[var(--color-graphite)]/80 group-hover:text-white/80 font-medium uppercase tracking-wider mt-1 transition-colors duration-300">{project.location[lang]}</p>
       </div>
     </article>
   );

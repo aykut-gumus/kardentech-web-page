@@ -37,9 +37,9 @@ export default function ProjectGrid({ lang }: { lang: Locale }) {
         <h1 className="text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl font-medium  tracking-[-0.005em] leading-[1.08] text-[var(--color-charcoal)] mb-4 uppercase">
           {dict.nav.references}
         </h1>
-        <p className="text-[var(--color-graphite)] text-lg">
-          {lang === 'tr' ? 'Tamamlanan projelerimizden seçkiler.' : lang === 'en' ? 'Selections from our completed projects.' : 'Подборка наших завершенных проектов.'}
-        </p>
+        <h2 className="text-[12px] md:text-sm font-semibold tracking-[0.2em] text-[var(--color-bodrum-blue)] uppercase mt-12">
+          {lang === 'tr' ? 'TAMAMLANAN PROJELERİMİZ' : lang === 'en' ? 'OUR COMPLETED PROJECTS' : 'НАШИ ЗАВЕРШЕННЫЕ ПРОЕКТЫ'}
+        </h2>
       </div>
 
       {/* Filter */}
