@@ -38,18 +38,18 @@ export const projects: Project[] = [
       '/images/projects/quadro-villalari/07.jpg',
     ],
     summary: {
-      tr: 'Kardentech Mühendislik\'in görev aldığı Quadro Villaları projesinden seçkiler.',
-      en: 'Selections from the Quadro Villas project in which Kardentech Engineering was involved.',
-      ru: 'Избранное из проекта Виллы Quadro, в котором принимала участие компания Kardentech Engineering.'
+      tr: 'Kardentech Mühendislik’in inşaat, ince işler, elektrik ve mekanik işlerini üstlendiği Yalıkavak Quadro Villaları projesinden seçkiler.',
+      en: 'Selections from the Yalıkavak Quadro Villas project, where Kardentech Engineering undertook the construction, finishing, electrical, and mechanical works.',
+      ru: 'Избранное из проекта вилл Quadro в Ялыкаваке, где компания Kardentech Engineering выполнила строительные, отделочные, электрические и механические работы.'
     },
   },
   {
     id: 'mercedes-benz-hasmer',
     slug: 'mercedes-benz-hasmer',
     title: {
-      tr: 'Mercedes Benz Hasmer',
-      en: 'Mercedes Benz Hasmer',
-      ru: 'Mercedes Benz Hasmer'
+      tr: 'Mercedes-Benz Hasmer',
+      en: 'Mercedes-Benz Hasmer',
+      ru: 'Mercedes-Benz Hasmer'
     },
     category: 'Ticari / Showroom',
     city: 'Antalya',
@@ -66,34 +66,33 @@ export const projects: Project[] = [
       '/images/projects/mercedes-benz-hasmer/09.jpg',
     ],
     summary: {
-      tr: 'Kardentech Mühendislik\'in görev aldığı Mercedes-Benz Hasmer Antalya projesinden seçkiler.',
-      en: 'Selections from the Mercedes-Benz Hasmer Antalya project in which Kardentech Engineering was involved.',
-      ru: 'Избранное из проекта Mercedes-Benz Hasmer Antalya, в котором принимала участие компания Kardentech Engineering.'
+      tr: 'Kardentech Mühendislik’in ince işler, elektrik ve mekanik işlerini üstlendiği Mercedes-Benz Hasmer Antalya projesinden seçkiler.',
+      en: 'Selections from the Mercedes-Benz Hasmer Antalya project, where Kardentech Engineering undertook the finishing, electrical, and mechanical works.',
+      ru: 'Избранное из проекта Mercedes-Benz Hasmer Antalya, где компания Kardentech Engineering выполнила отделочные, электрические и механические работы.'
     },
   },
   {
     id: 'suyali-yalikavak',
     slug: 'suyali-yalikavak',
     title: {
-      tr: 'Suyalı Yalıkavak',
-      en: 'Suyalı Yalıkavak',
-      ru: 'Suyalı Yalıkavak'
+      tr: 'Suyalı Yalıkavak C4 Binası',
+      en: 'Suyalı Yalıkavak C4 Building',
+      ru: 'Здание C4 Suyalı Yalıkavak'
     },
     category: 'Konut',
     city: 'Bodrum',
     coverImage: '/images/projects/suyali-yalikavak/02.jpg',
     images: [
       '/images/projects/suyali-yalikavak/01.jpg',
-      '/images/projects/suyali-yalikavak/02.jpg',
       '/images/projects/suyali-yalikavak/03.jpg',
       '/images/projects/suyali-yalikavak/04.jpg',
       '/images/projects/suyali-yalikavak/05.jpg',
       '/images/projects/suyali-yalikavak/06.jpg',
     ],
     summary: {
-      tr: 'Kardentech Mühendislik\'in görev aldığı Suyalı Yalıkavak projesinden seçkiler.',
-      en: 'Selections from the Suyalı Yalıkavak project in which Kardentech Engineering was involved.',
-      ru: 'Избранное из проекта Suyalı Yalıkavak, в котором принимала участие компания Kardentech Engineering.'
+      tr: 'Kardentech Mühendislik’in ince işler, elektrik ve mekanik işlerini üstlendiği Suyalı Yalıkavak C4 Binası projesinden seçkiler.',
+      en: 'Selections from the Suyalı Yalıkavak C4 Building project, where Kardentech Engineering undertook the finishing, electrical, and mechanical works.',
+      ru: 'Избранное из проекта здания C4 Suyalı Yalıkavak, где компания Kardentech Engineering выполнила отделочные, электрические и механические работы.'
     },
   },
   {
@@ -112,22 +111,20 @@ export const projects: Project[] = [
       '/images/projects/y-uzun-homes/02.jpg',
       '/images/projects/y-uzun-homes/03.jpg',
       '/images/projects/y-uzun-homes/04.jpg',
-      '/images/projects/y-uzun-homes/05.jpg',
-      '/images/projects/y-uzun-homes/06.jpg',
     ],
     summary: {
-      tr: 'Kardentech Mühendislik\'in görev aldığı Y. Uzun Home\'s projesinden seçkiler.',
-      en: 'Selections from the Y. Uzun Home\'s project in which Kardentech Engineering was involved.',
-      ru: 'Избранное из проекта Y. Uzun Home\'s, в котором принимала участие компания Kardentech Engineering.'
+      tr: 'Kardentech Mühendislik’in ince işler, elektrik ve mekanik işlerini üstlendiği Y. Uzun Home’s projesinden seçkiler.',
+      en: 'Selections from the Y. Uzun Home\'s project, where Kardentech Engineering undertook the finishing, electrical, and mechanical works.',
+      ru: 'Избранное из проекта Y. Uzun Home\'s, где компания Kardentech Engineering выполнила отделочные, электрические и механические работы.'
     },
   },
   {
     id: 'baia-bodrum-hotel',
     slug: 'baia-bodrum-hotel',
     title: {
-      tr: 'Baia Bodrum Hotel',
-      en: 'Baia Bodrum Hotel',
-      ru: 'Baia Bodrum Hotel'
+      tr: 'Baia Bodrum Hotel Renovasyonu',
+      en: 'Baia Bodrum Hotel Renovation',
+      ru: 'Реновация Отеля Baia Bodrum'
     },
     category: 'Otel',
     city: 'Bodrum',
@@ -142,9 +139,9 @@ export const projects: Project[] = [
       '/images/projects/baia-bodrum-hotel/07.jpg',
     ],
     summary: {
-      tr: 'Kardentech Mühendislik\'in görev aldığı Baia Bodrum Hotel projesinden seçkiler.',
-      en: 'Selections from the Baia Bodrum Hotel project in which Kardentech Engineering was involved.',
-      ru: 'Избранное из проекта Baia Bodrum Hotel, в котором принимала участие компания Kardentech Engineering.'
+      tr: 'Kardentech Mühendislik’in elektrik işlerini üstlendiği Baia Bodrum Hotel Renovasyonu projesinden seçkiler.',
+      en: 'Selections from the Baia Bodrum Hotel Renovation project, where Kardentech Engineering undertook the electrical works.',
+      ru: 'Избранное из проекта реновации отеля Baia Bodrum, где компания Kardentech Engineering выполнила электромонтажные работы.'
     },
   },
   {
@@ -164,9 +161,9 @@ export const projects: Project[] = [
       '/images/projects/sekerpinar-fabrikasi/03.jpg',
     ],
     summary: {
-      tr: 'Kardentech Mühendislik\'in görev aldığı Şekerpınar Fabrikası projesinden seçkiler.',
-      en: 'Selections from the Şekerpınar Factory project in which Kardentech Engineering was involved.',
-      ru: 'Избранное из проекта Фабрика Şekerpınar, в котором принимала участие компания Kardentech Engineering.'
+      tr: 'Kardentech Mühendislik’in elektrik ve mekanik işlerini üstlendiği Şekerpınar Trafo Parçaları Üretim Fabrikası projesinden seçkiler.',
+      en: 'Selections from the Şekerpınar Transformer Parts Production Factory project, where Kardentech Engineering undertook the electrical and mechanical works.',
+      ru: 'Избранное из проекта завода по производству трансформаторных деталей Şekerpınar, где компания Kardentech Engineering выполнила электрические и механические работы.'
     },
   },
 ];

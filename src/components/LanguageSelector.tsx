@@ -51,12 +51,12 @@ export default function LanguageSelector({ currentLang }: { currentLang: Locale 
   };
 
   return (
-    <div className="flex gap-5 items-center">
+    <div className="flex gap-1.5 min-[860px]:gap-5 items-center">
       <Link 
         href={getLocalizedUrl(pathname, 'tr')}
         onClick={() => handleStoreLocale('tr')}
         aria-current={currentLang === 'tr' ? 'true' : 'false'}
-        className={`flex flex-col items-center gap-[3px] transition-opacity cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue-dark)] rounded-sm p-1 -m-1 ${currentLang === 'tr' ? 'opacity-100' : 'opacity-60 hover:opacity-100'}`}
+        className={`flex flex-col items-center gap-[2px] min-[860px]:gap-[3px] transition-opacity cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue-dark)] rounded-sm p-1 -m-1 ${currentLang === 'tr' ? 'opacity-100' : 'opacity-60 hover:opacity-100'}`}
       >
         <TrFlag />
         <span className="text-[9px] font-semibold leading-none tracking-widest text-[var(--color-charcoal)]">TR</span>
@@ -65,7 +65,7 @@ export default function LanguageSelector({ currentLang }: { currentLang: Locale 
         href={getLocalizedUrl(pathname, 'en')}
         onClick={() => handleStoreLocale('en')}
         aria-current={currentLang === 'en' ? 'true' : 'false'}
-        className={`flex flex-col items-center gap-[3px] transition-opacity cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue-dark)] rounded-sm p-1 -m-1 ${currentLang === 'en' ? 'opacity-100' : 'opacity-60 hover:opacity-100'}`}
+        className={`flex flex-col items-center gap-[2px] min-[860px]:gap-[3px] transition-opacity cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue-dark)] rounded-sm p-1 -m-1 ${currentLang === 'en' ? 'opacity-100' : 'opacity-60 hover:opacity-100'}`}
       >
         <EnFlag />
         <span className="text-[9px] font-semibold leading-none tracking-widest text-[var(--color-charcoal)]">EN</span>
@@ -74,7 +74,7 @@ export default function LanguageSelector({ currentLang }: { currentLang: Locale 
         href={getLocalizedUrl(pathname, 'ru')}
         onClick={() => handleStoreLocale('ru')}
         aria-current={currentLang === 'ru' ? 'true' : 'false'}
-        className={`flex flex-col items-center gap-[3px] transition-opacity cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue-dark)] rounded-sm p-1 -m-1 ${currentLang === 'ru' ? 'opacity-100' : 'opacity-60 hover:opacity-100'}`}
+        className={`flex flex-col items-center gap-[2px] min-[860px]:gap-[3px] transition-opacity cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue-dark)] rounded-sm p-1 -m-1 ${currentLang === 'ru' ? 'opacity-100' : 'opacity-60 hover:opacity-100'}`}
       >
         <RuFlag />
         <span className="text-[9px] font-semibold leading-none tracking-widest text-[var(--color-charcoal)]">RU</span>
