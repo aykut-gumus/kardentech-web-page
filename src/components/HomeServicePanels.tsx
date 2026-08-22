@@ -11,14 +11,14 @@ export default function HomeServicePanels({ lang }: { lang: Locale }) {
   const dict = getDictionary(lang);
 
   return (
-    <div className="w-full flex flex-col flex-1 relative bg-[var(--color-charcoal)]">
+    <div className="w-full flex flex-col min-[860px]:flex-1 relative bg-[var(--color-charcoal)]">
       
       {/* 
         ========================================
         MOBILE STACK (Visible only on mobile)
         ========================================
       */}
-      <div className="md:hidden flex flex-col w-full h-auto relative overflow-hidden bg-[rgba(114,176,223,0.65)]">
+      <div className="min-[860px]:hidden flex flex-col w-full h-auto relative overflow-hidden bg-[rgba(114,176,223,0.65)]">
         
         {/* Panel 1 - Mekanik Sistemler */}
         <Link 
@@ -121,7 +121,7 @@ export default function HomeServicePanels({ lang }: { lang: Locale }) {
         DESKTOP DIAGONAL LAYOUT (md and up)
         ========================================
       */}
-      <div className="hidden md:block w-full h-full flex-1 relative overflow-hidden isolate bg-transparent group/panels">
+      <div className="hidden min-[860px]:block w-full h-full flex-1 relative overflow-hidden isolate bg-transparent group/panels">
         
         {/* PANEL 1: MEKANİK SİSTEMLER */}
         <Link 

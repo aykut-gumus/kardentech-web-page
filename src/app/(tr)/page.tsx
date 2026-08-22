@@ -8,8 +8,8 @@ export function generateMetadata() {
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 min-h-[calc(100svh-116px)] lg:h-[calc(100svh-116px)] lg:overflow-hidden">
-      <div className="flex-1 flex flex-col md:flex-row overflow-hidden w-full">
+    <div className="flex flex-col w-full min-h-[calc(100svh-116px)] min-[860px]:h-[calc(100svh-116px)] min-[860px]:overflow-hidden">
+      <div className="flex flex-col min-[860px]:flex-row min-[860px]:flex-1 min-[860px]:overflow-hidden w-full relative">
         <HomeServicePanels lang="tr" />
       </div>
       <Footer lang="tr" />

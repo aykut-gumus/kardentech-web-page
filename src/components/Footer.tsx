@@ -24,19 +24,19 @@ const InstagramIcon = () => (
 export default function Footer({ lang }: { lang: Locale }) {
   const dict = getDictionary(lang);
   return (
-    <footer className="w-full h-auto min-h-[60px] md:h-[60px] bg-[var(--color-charcoal)] text-[var(--color-soft-gray)] flex flex-col md:flex-row md:items-center px-4 md:px-12 lg:px-20 2xl:px-32 justify-between shrink-0 py-3 md:py-0 gap-3 md:gap-6">
+    <footer className="w-full h-auto bg-[var(--color-charcoal)] text-[var(--color-soft-gray)] flex flex-col lg:flex-row lg:items-center px-6 md:px-12 lg:px-20 2xl:px-32 justify-between shrink-0 py-6 lg:py-4 gap-5 lg:gap-6 relative z-[100]">
       <a 
         href="https://maps.app.goo.gl/JFnSd92f3UvoxZAr5"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-start md:items-center gap-2 text-[13px] md:text-[15px] font-medium hover:text-[var(--color-bodrum-blue-light)] transition-colors group cursor-pointer"
+        className="flex items-start lg:items-center gap-2 text-[13px] md:text-[15px] font-medium hover:text-[var(--color-bodrum-blue-light)] transition-colors group cursor-pointer"
       >
-        <MapPin size={16} className="shrink-0 mt-0.5 md:mt-0 text-[var(--color-bodrum-blue-light)] md:text-current group-hover:text-[var(--color-bodrum-blue-light)] transition-colors" />
-        <span className="leading-snug line-clamp-2 md:line-clamp-none text-[var(--color-white)]/90 md:text-[var(--color-white)]/100">
+        <MapPin size={16} className="shrink-0 mt-0.5 lg:mt-0 text-[var(--color-bodrum-blue-light)] lg:text-current group-hover:text-[var(--color-bodrum-blue-light)] transition-colors" />
+        <span className="leading-relaxed text-[var(--color-white)]/90 lg:text-[var(--color-white)]/100">
           Yalıkavak | Dirmil Mah. 6698 Sk. Küçük Sanayi Sitesi No: 12/13 Bodrum/MUĞLA
         </span>
       </a>
-      <div className="flex flex-wrap gap-4 md:gap-6 items-center text-[13px] md:text-[15px] font-medium text-[var(--color-white)]/90 md:text-[var(--color-white)]/100">
+      <div className="flex flex-wrap gap-4 lg:gap-6 items-center text-[13px] md:text-[15px] font-medium text-[var(--color-white)]/90 lg:text-[var(--color-white)]/100">
         <a href="mailto:info@kardentech.com" className="flex items-center gap-2 hover:text-[var(--color-bodrum-blue-light)] transition-colors">
           <Mail size={16} />
           <span>info@kardentech.com</span>

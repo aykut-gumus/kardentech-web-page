@@ -73,12 +73,17 @@ export default function Navbar({ lang }: { lang: Locale }) {
 
   return (
     <div className="relative z-[100] bg-[linear-gradient(to_right,#72B0DF_0%,#E6F0FA_100%)] shadow-sm shrink-0" ref={dropdownRef}>
-      <nav className="flex items-center justify-between px-6 md:px-12 lg:px-20 2xl:px-32 h-[100px]">
-        {/* Official Brand Logo */}
+      <nav className="relative flex items-center justify-between px-6 md:px-12 lg:px-20 2xl:px-32 h-[100px]">
+        {/* Mobile Top Row: Language Selector (Absolutely positioned to not push content down) */}
+        <div className="absolute top-3.5 right-6 md:right-12 min-[860px]:hidden z-50">
+          <LanguageSelector currentLang={lang} />
+        </div>
+
+        {/* Brand Group */}
         <Link 
           href={routeMap.home[lang]} 
           onClick={() => { setIsServicesOpen(false); setIsMobileMenuOpen(false); }}
-          className="flex items-center gap-2 md:gap-3 relative z-50 hover:opacity-90 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-sm p-2 -m-2"
+          className="flex items-center gap-2 md:gap-3 z-50 hover:opacity-90 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-sm"
         >
           {/* Official Image Logo */}
           <Image 
@@ -92,14 +97,30 @@ export default function Navbar({ lang }: { lang: Locale }) {
 
           {/* Right Block (Bodrum) */}
           {pageId === 'home' && (
-            <span className={`${tangerine.className} text-white text-[34px] md:text-[42px] lg:text-[48px] 2xl:text-[52px] leading-none translate-y-1.5 md:translate-y-2`}>
+            <span className={`${tangerine.className} text-white text-[34px] md:text-[42px] lg:text-[48px] 2xl:text-[52px] leading-none`}>
               Bodrum
             </span>
           )}
         </Link>
 
-        {/* Right side Container */}
-        <div className="flex items-center min-[860px]:flex-col min-[860px]:items-end min-[860px]:justify-center gap-4 min-[860px]:gap-2 relative z-[100]">
+        {/* Desktop Links and Mobile Hamburger Container */}
+        <div className="flex items-center gap-6 lg:gap-8">
+          
+          {/* Mobile Hamburger */}
+          <div className="min-[860px]:hidden relative z-50 mr-4 translate-y-2">
+            <button 
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
+              className="p-2 text-[var(--color-charcoal)] focus:outline-none rounded-sm focus-visible:ring-2 focus-visible:ring-white"
+              aria-label="Toggle menu" 
+              aria-expanded={isMobileMenuOpen}
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
+        </div>
+
+        {/* Desktop Right side Container */}
+        <div className="hidden min-[860px]:flex flex-col items-end justify-center gap-2 relative z-[100]">
           
           {/* Language Selector (Desktop Top) */}
           <div className="hidden min-[860px]:flex items-center">
@@ -168,18 +189,6 @@ export default function Navbar({ lang }: { lang: Locale }) {
           </Link>
           </div>
 
-          {/* Mobile Right Side (Hamburger + Lang) */}
-          <div className="min-[860px]:hidden flex items-center gap-4">
-            <LanguageSelector currentLang={lang} />
-            <button 
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
-              className="p-2 text-[var(--color-charcoal)] focus:outline-none z-50 rounded-sm focus-visible:ring-2 focus-visible:ring-white"
-              aria-label="Toggle menu" 
-              aria-expanded={isMobileMenuOpen}
-            >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
         </div>
       </nav>
 
