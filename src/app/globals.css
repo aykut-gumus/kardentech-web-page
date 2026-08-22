@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-bodrum-blue: #7EB6E0;
+  --color-bodrum-blue: #72B0DF;
   --color-bodrum-blue-dark: #125FA9;
-  --color-bodrum-blue-light: rgba(126, 182, 224, 0.40);
+  --color-bodrum-blue-light: rgba(114, 176, 223, 0.40);
   --color-charcoal: #22272B;
   --color-graphite: #343A40;
   --color-soft-gray: #F3F5F6;

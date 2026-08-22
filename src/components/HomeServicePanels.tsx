@@ -18,7 +18,7 @@ export default function HomeServicePanels({ lang }: { lang: Locale }) {
         MOBILE STACK (Visible only on mobile)
         ========================================
       */}
-      <div className="md:hidden flex flex-col w-full h-auto relative overflow-hidden bg-[rgba(126,182,224,0.65)]">
+      <div className="md:hidden flex flex-col w-full h-auto relative overflow-hidden bg-[rgba(114,176,223,0.65)]">
         
         {/* Panel 1 - Elektrik Sistemleri */}
         <Link 

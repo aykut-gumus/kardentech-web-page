@@ -20,7 +20,6 @@ export default function BaseLayout({
     <html lang={lang}>
       <body className={`${instrumentSerif.variable} ${instrumentSerif.className} antialiased bg-[var(--color-white)] text-[var(--color-charcoal)]`}>
         <div className="flex flex-col min-h-screen">
-          <TopBar lang={lang as any} />
           <Navbar lang={lang as any} />
           <main className="flex-1 flex flex-col relative w-full">
             {children}

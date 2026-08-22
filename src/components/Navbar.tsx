@@ -9,6 +9,7 @@ import ServicesDropdown from './ServicesDropdown';
 import { Locale } from '@/i18n/types';
 import { getDictionary } from '@/i18n';
 import { routeMap, getPageIdFromPath } from '@/i18n/routes';
+import LanguageSelector from './LanguageSelector';
 
 import { Tangerine } from 'next/font/google';
 
@@ -71,41 +72,42 @@ export default function Navbar({ lang }: { lang: Locale }) {
   const isReferencesActive = pageId === 'references' || pageId === 'dynamic-reference';
 
   return (
-    <div className="relative z-[100] bg-[var(--color-white)] shadow-sm shrink-0" ref={dropdownRef}>
-      <nav className="flex items-center justify-between px-6 md:px-12 lg:px-20 2xl:px-32 h-[80px]">
-        {/* Logo */}
+    <div className="relative z-[100] bg-[linear-gradient(to_right,#72B0DF_0%,#E6F0FA_100%)] shadow-sm shrink-0" ref={dropdownRef}>
+      <nav className="flex items-center justify-between px-6 md:px-12 lg:px-20 2xl:px-32 h-[100px]">
+        {/* Official Brand Logo */}
         <Link 
           href={routeMap.home[lang]} 
           onClick={() => { setIsServicesOpen(false); setIsMobileMenuOpen(false); }}
-          className="flex items-center gap-2 md:gap-[10px] relative z-50 hover:opacity-90 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue)] rounded-sm p-1 -m-1"
+          className="flex items-center gap-2 md:gap-3 relative z-50 hover:opacity-90 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-sm p-2 -m-2"
         >
+          {/* Official Image Logo */}
           <Image 
-            src="/images/brand/kardentech-logo-company.jpeg" 
-            alt="Kardentech Logo" 
+            src="/images/brand/kardentech-logo-navbar.jpeg"
+            alt="KardenTech Logo"
             width={1330}
             height={446}
             priority
-            className="h-[45px] md:h-[55px] w-auto object-contain"
+            className="w-auto h-[52px] md:h-[64px] object-contain"
           />
+
+          {/* Right Block (Bodrum) */}
           {pageId === 'home' && (
-            <span className={`${tangerine.className} text-[var(--color-bodrum-blue)] text-[32px] md:text-[42px] lg:text-[44px] 2xl:text-[48px] translate-y-[2px] md:translate-y-[3px]`}>
+            <span className={`${tangerine.className} text-white text-[34px] md:text-[42px] lg:text-[48px] 2xl:text-[52px] leading-none translate-y-1.5 md:translate-y-2`}>
               Bodrum
             </span>
           )}
         </Link>
 
-        {/* Mobile Hamburger Button */}
-        <button 
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
-          className="min-[860px]:hidden p-2 text-[var(--color-charcoal)] focus:outline-none z-50 rounded-sm focus-visible:ring-2 focus-visible:ring-[var(--color-bodrum-blue)]"
-          aria-label="Toggle menu" 
-          aria-expanded={isMobileMenuOpen}
-        >
-          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        {/* Right side Container */}
+        <div className="flex items-center min-[860px]:flex-col min-[860px]:items-end min-[860px]:justify-center gap-4 min-[860px]:gap-2 relative z-[100]">
+          
+          {/* Language Selector (Desktop Top) */}
+          <div className="hidden min-[860px]:flex items-center">
+            <LanguageSelector currentLang={lang} />
+          </div>
 
-        {/* Desktop Links */}
-        <div className="hidden min-[860px]:flex items-center gap-8 text-[15px] font-medium text-[var(--color-charcoal)] relative z-[100] whitespace-nowrap">
+          {/* Desktop Links */}
+          <div className="hidden min-[860px]:flex items-center gap-6 lg:gap-8 text-[16px] font-normal text-[var(--color-charcoal)] whitespace-nowrap">
           <Link 
             href={routeMap.home[lang]} 
             onClick={() => setIsServicesOpen(false)}
@@ -164,6 +166,20 @@ export default function Navbar({ lang }: { lang: Locale }) {
             {dict.nav.contact}
             <span className={`absolute bottom-0 left-0 h-[2px] bg-[var(--color-bodrum-blue)] transition-all ${pageId === 'contact' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
           </Link>
+          </div>
+
+          {/* Mobile Right Side (Hamburger + Lang) */}
+          <div className="min-[860px]:hidden flex items-center gap-4">
+            <LanguageSelector currentLang={lang} />
+            <button 
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
+              className="p-2 text-[var(--color-charcoal)] focus:outline-none z-50 rounded-sm focus-visible:ring-2 focus-visible:ring-white"
+              aria-label="Toggle menu" 
+              aria-expanded={isMobileMenuOpen}
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
       </nav>
 
