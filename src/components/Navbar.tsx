@@ -82,10 +82,10 @@ export default function Navbar({ lang }: { lang: Locale }) {
         >
           {/* Official Image Logo */}
           <Image 
-            src="/images/brand/kardentech-logo-navbar.jpeg"
+            src="/images/brand/kardentech-logo-navbar-hi-res.png"
             alt="KardenTech Logo"
-            width={1330}
-            height={446}
+            width={3452}
+            height={1156}
             priority
             className="w-auto h-[52px] md:h-[64px] object-contain"
           />
@@ -221,18 +221,18 @@ export default function Navbar({ lang }: { lang: Locale }) {
               {isMobileServicesOpen && (
                 <div className="flex flex-col bg-black/10 text-[15px] border-r border-[var(--color-bodrum-blue)]/40">
                   <Link 
-                    href={routeMap.electrical[lang]} 
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className={`block px-5 py-3 text-right transition-colors duration-200 focus:outline-none hover:bg-white/5 ${pageId === 'electrical' ? 'text-[var(--color-bodrum-blue)]' : 'text-white/80'}`}
-                  >
-                    {dict.nav.serviceDropdown.electrical}
-                  </Link>
-                  <Link 
                     href={routeMap.mechanical[lang]} 
                     onClick={() => setIsMobileMenuOpen(false)}
                     className={`block px-5 py-3 text-right transition-colors duration-200 focus:outline-none hover:bg-white/5 ${pageId === 'mechanical' ? 'text-[var(--color-bodrum-blue)]' : 'text-white/80'}`}
                   >
                     {dict.nav.serviceDropdown.mechanical}
+                  </Link>
+                  <Link 
+                    href={routeMap.electrical[lang]} 
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`block px-5 py-3 text-right transition-colors duration-200 focus:outline-none hover:bg-white/5 ${pageId === 'electrical' ? 'text-[var(--color-bodrum-blue)]' : 'text-white/80'}`}
+                  >
+                    {dict.nav.serviceDropdown.electrical}
                   </Link>
                   <Link 
                     href={routeMap.finishing[lang]} 

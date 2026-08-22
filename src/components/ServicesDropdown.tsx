@@ -30,12 +30,12 @@ export default function ServicesDropdown({ onClose, lang }: ServicesDropdownProp
 
   const services = [
     {
-      title: dict.nav.serviceDropdown.electrical,
-      href: routeMap.electrical[lang]
-    },
-    {
       title: dict.nav.serviceDropdown.mechanical,
       href: routeMap.mechanical[lang]
+    },
+    {
+      title: dict.nav.serviceDropdown.electrical,
+      href: routeMap.electrical[lang]
     },
     {
       title: dict.nav.serviceDropdown.finishing,
