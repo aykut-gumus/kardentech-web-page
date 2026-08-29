@@ -14,29 +14,27 @@ export default function ServiceDisciplines({ lang }: { lang: Locale }) {
       title: dict.services.categories.electrical.title,
       href: routeMap.electrical[lang],
       description: dict.services.categories.electrical.desc,
-      image: '/images/projects/baia-bodrum-hotel/01.jpg'
+      image: '/images/services/elektrik.png'
     },
     {
       title: dict.services.categories.mechanical.title,
       href: routeMap.mechanical[lang],
       description: dict.services.categories.mechanical.desc,
-      image: '/images/projects/sekerpinar-fabrikasi/01.jpg'
+      image: '/images/services/mekanik.png'
     },
     {
       title: dict.services.categories.finishing.title,
       href: routeMap.finishing[lang],
       description: dict.services.categories.finishing.desc,
-      image: '/images/projects/y-uzun-homes/01.jpg'
+      image: '/images/services/ince-isler.png'
     }
   ];
 
   return (
     <section className="w-full bg-[var(--color-white)] px-6 md:px-12 lg:px-20 2xl:px-32 pt-12 pb-16 md:pt-12 md:pb-24">
       <div className="max-w-[1440px] mx-auto flex flex-col">
-        <h2 className="text-[12px] md:text-sm font-semibold tracking-[0.2em] text-[var(--color-bodrum-blue)] uppercase mb-12">
-          {dict.nav.services}
-        </h2>
         
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
           {disciplines.map((discipline, index) => (
             <Link 

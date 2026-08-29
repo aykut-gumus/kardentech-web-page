@@ -96,11 +96,9 @@ export default function Navbar({ lang }: { lang: Locale }) {
           />
 
           {/* Right Block (Bodrum) */}
-          {pageId === 'home' && (
-            <span className={`${tangerine.className} text-white text-[34px] md:text-[42px] lg:text-[48px] 2xl:text-[52px] leading-none`}>
-              Bodrum
-            </span>
-          )}
+          <span className={`${tangerine.className} text-white text-[34px] md:text-[42px] lg:text-[48px] 2xl:text-[52px] leading-none`}>
+            Bodrum
+          </span>
         </Link>
 
         {/* Desktop Links and Mobile Hamburger Container */}

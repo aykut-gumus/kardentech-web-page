@@ -1,25 +1,18 @@
 import { getLocalizedMetadata } from '@/i18n/metadata';
 import ServicesHero from '@/components/services/ServicesHero';
 import ServiceIntro from '@/components/services/ServiceIntro';
-import RelatedProject from '@/components/services/RelatedProject';
 import ServiceItems from '@/components/services/ServiceItems';
 import ServicesCTA from '@/components/services/ServicesCTA';
 import Footer from '@/components/Footer';
-import { projects } from '@/data/projects';
 
 export function generateMetadata() {
   return getLocalizedMetadata({ locale: 'tr', pageId: 'mechanical' });
 }
 
 export default function MekanikSistemlerPage() {
-  const heroImages = [
-    { src: '/images/projects/sekerpinar-fabrikasi/02.jpg', position: 'object-center' }
+    const heroImages = [
+    { src: '/images/services/mekanik.png', position: 'object-center' }
   ];
-
-  const sekerpinarProject = projects.find(p => p.id === 'sekerpinar-fabrikasi');
-
-  const relatedProjectsData = [];
-  if (sekerpinarProject) relatedProjectsData.push({ project: sekerpinarProject, description: 'Elektrik ve Mekanik İşleri' });
 
   return (
     <div className="flex flex-col min-h-full bg-[var(--color-white)] w-full overflow-x-hidden">
@@ -48,8 +41,6 @@ export default function MekanikSistemlerPage() {
         { id: '8', title: 'Yangın Söndürme Sistemleri (Yangın Pompası, Yangın Dolabı, Sprinkler v.b.)', image: '/images/services/mekanik/08.jpg' },
       ]} />
 
-      <RelatedProject lang="tr" projects={relatedProjectsData} />
-      
       <ServicesCTA lang="tr" />
       
       <Footer lang="tr" />

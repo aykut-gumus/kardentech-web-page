@@ -11,11 +11,11 @@ export default function ContactHero({ lang }: { lang: Locale }) {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image 
-          src="/images/projects/suyali-yalikavak/01.jpg"
+          src="/images/hero/contact-bodrum-castle-test.jpg"
           alt="Kardentech Mühendislik İletişim"
           fill
           sizes="100vw"
-          className="object-cover object-center opacity-60 grayscale-[0.8]"
+          className="object-cover object-center opacity-80"
           priority
         />
       </div>

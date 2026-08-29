@@ -1,6 +1,5 @@
 import { getLocalizedMetadata } from '@/i18n/metadata';
 import ServicesHero from '@/components/services/ServicesHero';
-import ServiceApproach from '@/components/services/ServiceApproach';
 import ServiceDisciplines from '@/components/services/ServiceDisciplines';
 import ServicesCTA from '@/components/services/ServicesCTA';
 import Footer from '@/components/Footer';
@@ -10,10 +9,10 @@ export function generateMetadata() {
 }
 
 export default function HizmetlerimizPage() {
-  const heroImages = [
-    { src: '/images/projects/quadro-villalari/01.jpg', position: 'object-center' },
-    { src: '/images/projects/mercedes-benz-hasmer/01.jpg', position: 'object-top' },
-    { src: '/images/projects/sekerpinar-fabrikasi/01.jpg', position: 'object-center' }
+    const heroImages = [
+    { src: '/images/services/mekanik.png', position: 'object-center' },
+    { src: '/images/services/elektrik.png', position: 'object-center' },
+    { src: '/images/services/ince-isler.png', position: 'object-center' }
   ];
 
   return (
@@ -23,7 +22,6 @@ export default function HizmetlerimizPage() {
         pageId="services"
         images={heroImages}
       />
-      <ServiceApproach lang="tr" />
       <ServiceDisciplines lang="tr" />
       <ServicesCTA lang="tr" />
       <Footer lang="tr" />
