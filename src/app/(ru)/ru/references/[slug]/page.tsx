@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { projects } from '@/data/projects';
 import ProjectGallery from '@/components/ProjectGallery';
 import Footer from '@/components/Footer';
+import JsonLd from '@/components/JsonLd';
+import { getBreadcrumbSchema } from '@/lib/json-ld';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -15,15 +17,20 @@ export async function generateStaticParams() {
   }));
 }
 
+import { getLocalizedMetadata } from '@/i18n/metadata';
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const resolvedParams = await params;
   const project = projects.find((p) => p.slug === resolvedParams.slug);
   if (!project) return { title: 'Проект не найден' };
   
-  return {
-    title: `${project.title.ru} | Kardentech Рекомендации`,
-    description: project.summary?.ru || `Технические детали проекта ${project.title.ru}.`,
-  };
+  return getLocalizedMetadata({
+    locale: 'ru',
+    pageId: 'dynamic-reference',
+    dynamicSlug: project.slug,
+    dynamicTitle: `${project.title.ru} | KardenTech Mühendislik`,
+    dynamicDesc: project.summary?.ru || `Технические детали проекта ${project.title.ru}.`,
+  });
 }
 
 export default async function ProjectDetailPageRU({ params }: PageProps) {
@@ -44,8 +51,15 @@ export default async function ProjectDetailPageRU({ params }: PageProps) {
   const translatedCategory = categoryMap[project.category] || project.category;
 
   return (
-    <div className="flex flex-col min-h-screen bg-[var(--color-white)]">
-      {/* Hero Section */}
+    <>
+      <JsonLd data={[
+        getBreadcrumbSchema([
+          { name: 'Реализованные проекты', item: '/ru/references' },
+          { name: project.title.ru, item: `/ru/references/${project.slug}` }
+        ])
+      ]} />
+      <div className="flex flex-col min-h-screen bg-[var(--color-white)]">
+        {/* Hero Section */}
       <section className="relative w-full h-[55vh] max-h-[65vh] bg-[var(--color-charcoal)] overflow-hidden shrink-0">
         <div className="absolute inset-0 bg-black/60 z-10"></div>
         <Image
@@ -94,6 +108,7 @@ export default async function ProjectDetailPageRU({ params }: PageProps) {
       </section>
 
       <Footer lang="ru" />
-    </div>
+      </div>
+    </>
   );
 }

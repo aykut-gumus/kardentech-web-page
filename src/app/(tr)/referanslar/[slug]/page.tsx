@@ -4,6 +4,9 @@ import Image from 'next/image';
 import { projects } from '@/data/projects';
 import ProjectGallery from '@/components/ProjectGallery';
 import Footer from '@/components/Footer';
+import { getLocalizedMetadata } from '@/i18n/metadata';
+import JsonLd from '@/components/JsonLd';
+import { getBreadcrumbSchema } from '@/lib/json-ld';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -20,10 +23,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const project = projects.find((p) => p.slug === resolvedParams.slug);
   if (!project) return { title: 'Proje Bulunamadı' };
   
-  return {
-    title: `${project.title.tr} | Kardentech Referanslar`,
-    description: project.summary?.tr || `${project.title.tr} projesi teknik detayları.`,
-  };
+  return getLocalizedMetadata({
+    locale: 'tr',
+    pageId: 'dynamic-reference',
+    dynamicSlug: project.slug,
+    dynamicTitle: `${project.title.tr} | KardenTech Mühendislik`,
+    dynamicDesc: project.summary?.tr || `${project.title.tr} projesi teknik detayları.`,
+  });
 }
 
 export default async function ProjectDetailPage({ params }: PageProps) {
@@ -35,9 +41,16 @@ export default async function ProjectDetailPage({ params }: PageProps) {
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-[var(--color-white)]">
-      {/* Hero Section */}
-      <section className="relative w-full h-[55vh] max-h-[65vh] bg-[var(--color-charcoal)] overflow-hidden shrink-0">
+    <>
+      <JsonLd data={[
+        getBreadcrumbSchema([
+          { name: 'Referanslar', item: '/referanslar' },
+          { name: project.title.tr, item: `/referanslar/${project.slug}` }
+        ])
+      ]} />
+      <div className="flex flex-col min-h-screen bg-[var(--color-white)]">
+        {/* Hero Section */}
+        <section className="relative w-full h-[55vh] max-h-[65vh] bg-[var(--color-charcoal)] overflow-hidden shrink-0">
         <div className="absolute inset-0 bg-black/60 z-10"></div>
         <Image
           src={project.coverImage}
@@ -85,6 +98,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
       </section>
 
       <Footer lang="tr" />
-    </div>
+      </div>
+    </>
   );
 }

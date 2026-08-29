@@ -26,7 +26,7 @@ export const tr: Dictionary = {
   home: {
     hero: {
       title: 'KARDENTECH MÜHENDİSLİK',
-      subtitle: 'Bodrum Merkezli Modern Çözümler',
+      subtitle: 'Bodrum Merkezli Modern Mühendislik Çözümleri',
     },
   },
   about: {
@@ -50,15 +50,15 @@ export const tr: Dictionary = {
     categories: {
       electrical: {
         title: 'ELEKTRİK SİSTEMLERİ',
-        desc: 'Modern yapıların gereksinim duyduğu güvenli, verimli ve yenilikçi elektrik tesisat çözümleri.',
+        desc: 'Bodrum ve çevresinde, modern yapıların gereksinim duyduğu güvenli, verimli ve yenilikçi elektrik tesisat çözümleri.',
       },
       mechanical: {
         title: 'MEKANİK SİSTEMLER',
-        desc: 'Uluslararası standartlara uygun olarak iklimlendirme, havalandırma ve sıhhi tesisat uygulamaları.',
+        desc: 'Bodrum\'daki projeleriniz için uluslararası standartlara uygun olarak iklimlendirme, havalandırma ve mekanik tesisat uygulamaları.',
       },
       finishing: {
         title: 'İNCE İŞLER',
-        desc: 'Mekanların karakterini belirleyen detaylı mimari uygulamalar ve kusursuz yüzey bitişleri.',
+        desc: 'Bodrum yarımadasındaki yapılarınız için detaylı renovasyon, mimari uygulamalar ve kusursuz ince işler.',
       },
     },
   },

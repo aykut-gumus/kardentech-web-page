@@ -26,7 +26,7 @@ export const en: Dictionary = {
   home: {
     hero: {
       title: 'KARDENTECH ENGINEERING',
-      subtitle: 'Modern Solutions Based in Bodrum',
+      subtitle: 'Modern Engineering Solutions Based in Bodrum',
     },
   },
   about: {
@@ -50,15 +50,15 @@ export const en: Dictionary = {
     categories: {
       electrical: {
         title: 'ELECTRICAL SYSTEMS',
-        desc: 'Safe, efficient, and innovative electrical installation solutions required by modern structures.',
+        desc: 'Safe, efficient, and innovative electrical installation solutions required by modern structures in and around Bodrum.',
       },
       mechanical: {
         title: 'MECHANICAL SYSTEMS',
-        desc: 'Applications in air conditioning, ventilation, and sanitary installations in compliance with international standards.',
+        desc: 'Air conditioning, ventilation, and mechanical installation applications in compliance with international standards for your projects in Bodrum.',
       },
       finishing: {
         title: 'FINISHING WORKS',
-        desc: 'Detailed architectural applications and flawless surface finishes that define the character of spaces.',
+        desc: 'Detailed renovation, architectural applications, and flawless surface finishes for your properties on the Bodrum peninsula.',
       },
     },
   },

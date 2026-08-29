@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { projects } from '@/data/projects';
 import ProjectGallery from '@/components/ProjectGallery';
 import Footer from '@/components/Footer';
+import JsonLd from '@/components/JsonLd';
+import { getBreadcrumbSchema } from '@/lib/json-ld';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -15,15 +17,20 @@ export async function generateStaticParams() {
   }));
 }
 
+import { getLocalizedMetadata } from '@/i18n/metadata';
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const resolvedParams = await params;
   const project = projects.find((p) => p.slug === resolvedParams.slug);
   if (!project) return { title: 'Project Not Found' };
   
-  return {
-    title: `${project.title.en} | Kardentech References`,
-    description: project.summary?.en || `${project.title.en} project technical details.`,
-  };
+  return getLocalizedMetadata({
+    locale: 'en',
+    pageId: 'dynamic-reference',
+    dynamicSlug: project.slug,
+    dynamicTitle: `${project.title.en} | KardenTech Engineering`,
+    dynamicDesc: project.summary?.en || `${project.title.en} project technical details.`,
+  });
 }
 
 export default async function ProjectDetailPageEN({ params }: PageProps) {
@@ -45,8 +52,15 @@ export default async function ProjectDetailPageEN({ params }: PageProps) {
   const translatedCategory = categoryMap[project.category] || project.category;
 
   return (
-    <div className="flex flex-col min-h-screen bg-[var(--color-white)]">
-      {/* Hero Section */}
+    <>
+      <JsonLd data={[
+        getBreadcrumbSchema([
+          { name: 'References', item: '/en/references' },
+          { name: project.title.en, item: `/en/references/${project.slug}` }
+        ])
+      ]} />
+      <div className="flex flex-col min-h-screen bg-[var(--color-white)]">
+        {/* Hero Section */}
       <section className="relative w-full h-[55vh] max-h-[65vh] bg-[var(--color-charcoal)] overflow-hidden shrink-0">
         <div className="absolute inset-0 bg-black/60 z-10"></div>
         <Image
@@ -95,6 +109,7 @@ export default async function ProjectDetailPageEN({ params }: PageProps) {
       </section>
 
       <Footer lang="en" />
-    </div>
+      </div>
+    </>
   );
 }
