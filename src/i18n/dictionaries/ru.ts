@@ -8,6 +8,7 @@ export const ru: Dictionary = {
     whatsapp: 'WHATSAPP',
     openInMaps: 'ОТКРЫТЬ НА КАРТЕ',
     all: 'ВСЕ',
+    copyright: '© 2026 KardenTech Mühendislik • Все права защищены.',
   },
   nav: {
     home: 'Главная',

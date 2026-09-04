@@ -2,6 +2,8 @@ import { MetadataRoute } from 'next';
 import { routeMap } from '@/i18n/routes';
 import { projects } from '@/data/projects';
 
+export const dynamic = 'force-static';
+
 const siteUrl = 'https://www.kardentech.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {

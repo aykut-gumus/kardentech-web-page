@@ -4,6 +4,8 @@ import ServiceIntro from '@/components/services/ServiceIntro';
 import ServiceItems from '@/components/services/ServiceItems';
 import ServicesCTA from '@/components/services/ServicesCTA';
 import Footer from '@/components/Footer';
+import JsonLd from '@/components/JsonLd';
+import { getBreadcrumbSchema } from '@/lib/json-ld';
 
 export function generateMetadata() {
   return getLocalizedMetadata({ locale: 'tr', pageId: 'electrical' });
@@ -15,7 +17,13 @@ export default function ElektrikSistemleriPage() {
   ];
 
   return (
-    <div className="flex flex-col min-h-full bg-[var(--color-white)] w-full overflow-x-hidden">
+    <>
+      <JsonLd data={[
+        getBreadcrumbSchema(
+          [ { name: 'Hizmetlerimiz', item: '/hizmetlerimiz' }, { name: 'Elektrik Sistemleri', item: '/elektrik-sistemleri' } ]
+        )
+      ]} />
+<div className="flex flex-col min-h-full bg-[var(--color-white)] w-full overflow-x-hidden">
       <ServicesHero 
         lang="tr"
         pageId="electrical"
@@ -44,5 +52,6 @@ export default function ElektrikSistemleriPage() {
       
       <Footer lang="tr" />
     </div>
+    </>
   );
 }

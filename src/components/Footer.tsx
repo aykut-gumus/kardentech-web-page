@@ -50,6 +50,11 @@ export default function Footer({ lang }: { lang: Locale }) {
           <span>kardentech</span>
         </a>
       </div>
+      <div className="absolute left-1/2 -translate-x-1/2 bottom-1 lg:bottom-auto lg:top-1/2 lg:-translate-y-1/2 w-full text-center pointer-events-none">
+        <span className="text-[11px] md:text-[12px] font-light text-[var(--color-white)]/40 tracking-wider">
+          {dict.common.copyright}
+        </span>
+      </div>
     </footer>
   );
 }

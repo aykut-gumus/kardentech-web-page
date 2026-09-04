@@ -3,6 +3,8 @@ import ServicesHero from '@/components/services/ServicesHero';
 import ServiceIntro from '@/components/services/ServiceIntro';
 import ServicesCTA from '@/components/services/ServicesCTA';
 import Footer from '@/components/Footer';
+import JsonLd from '@/components/JsonLd';
+import { getBreadcrumbSchema } from '@/lib/json-ld';
 
 export function generateMetadata() {
   return getLocalizedMetadata({ locale: 'en', pageId: 'finishing' });
@@ -14,7 +16,13 @@ export default function FinishingPageEN() {
   ];
 
   return (
-    <div className="flex flex-col min-h-full bg-[var(--color-white)] w-full overflow-x-hidden">
+    <>
+      <JsonLd data={[
+        getBreadcrumbSchema(
+          [ { name: 'Services', item: '/en/services' }, { name: 'Finishing Works', item: '/en/services/finishing-works' } ]
+        )
+      ]} />
+<div className="flex flex-col min-h-full bg-[var(--color-white)] w-full overflow-x-hidden">
       <ServicesHero 
         lang="en"
         pageId="finishing"
@@ -33,5 +41,6 @@ export default function FinishingPageEN() {
       
       <Footer lang="en" />
     </div>
+    </>
   );
 }

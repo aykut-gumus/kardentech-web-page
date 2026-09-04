@@ -8,6 +8,7 @@ export const tr: Dictionary = {
     whatsapp: 'WHATSAPP',
     openInMaps: 'HARİTADA AÇ',
     all: 'Tümü',
+    copyright: '© 2026 KardenTech Mühendislik • Tüm hakları saklıdır.',
   },
   nav: {
     home: 'Ana Sayfa',

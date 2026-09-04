@@ -58,7 +58,7 @@ export default function ContactForm({ lang }: { lang: Locale }) {
     const data = Object.fromEntries(formData.entries());
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('/contact-form.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -8,6 +8,7 @@ export type Dictionary = {
     whatsapp: string;
     openInMaps: string;
     all: string;
+    copyright: string;
   };
   nav: {
     home: string;

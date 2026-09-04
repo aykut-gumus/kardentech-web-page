@@ -39,3 +39,21 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Deployment ZIP
+kardentech-public-html-final*.zip
+
+# Deployment Folders
+kardentech-static-deployment*/
+
+# Temp testing
+prod_test.html
+temp_live*.html
+old_footer.txt
+parse-live-html.js
+parse-robust.js
+check.js
+check-jsonld.js
+seo-test.js
+seo_validator.js
+temp_zip_check/

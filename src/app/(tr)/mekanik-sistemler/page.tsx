@@ -4,6 +4,8 @@ import ServiceIntro from '@/components/services/ServiceIntro';
 import ServiceItems from '@/components/services/ServiceItems';
 import ServicesCTA from '@/components/services/ServicesCTA';
 import Footer from '@/components/Footer';
+import JsonLd from '@/components/JsonLd';
+import { getBreadcrumbSchema } from '@/lib/json-ld';
 
 export function generateMetadata() {
   return getLocalizedMetadata({ locale: 'tr', pageId: 'mechanical' });
@@ -15,7 +17,13 @@ export default function MekanikSistemlerPage() {
   ];
 
   return (
-    <div className="flex flex-col min-h-full bg-[var(--color-white)] w-full overflow-x-hidden">
+    <>
+      <JsonLd data={[
+        getBreadcrumbSchema(
+          [ { name: 'Hizmetlerimiz', item: '/hizmetlerimiz' }, { name: 'Mekanik Sistemler', item: '/mekanik-sistemler' } ]
+        )
+      ]} />
+<div className="flex flex-col min-h-full bg-[var(--color-white)] w-full overflow-x-hidden">
       <ServicesHero 
         lang="tr"
         pageId="mechanical"
@@ -45,5 +53,6 @@ export default function MekanikSistemlerPage() {
       
       <Footer lang="tr" />
     </div>
+    </>
   );
 }

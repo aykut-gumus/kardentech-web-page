@@ -3,6 +3,8 @@ import ServicesHero from '@/components/services/ServicesHero';
 import ServiceIntro from '@/components/services/ServiceIntro';
 import ServicesCTA from '@/components/services/ServicesCTA';
 import Footer from '@/components/Footer';
+import JsonLd from '@/components/JsonLd';
+import { getBreadcrumbSchema } from '@/lib/json-ld';
 
 export function generateMetadata() {
   return getLocalizedMetadata({ locale: 'tr', pageId: 'finishing' });
@@ -14,7 +16,13 @@ export default function InceIslerPage() {
   ];
 
   return (
-    <div className="flex flex-col min-h-full bg-[var(--color-white)] w-full overflow-x-hidden">
+    <>
+      <JsonLd data={[
+        getBreadcrumbSchema(
+          [ { name: 'Hizmetlerimiz', item: '/hizmetlerimiz' }, { name: 'İnce İşler', item: '/ince-isler' } ]
+        )
+      ]} />
+<div className="flex flex-col min-h-full bg-[var(--color-white)] w-full overflow-x-hidden">
       <ServicesHero 
         lang="tr"
         pageId="finishing"
@@ -33,5 +41,6 @@ export default function InceIslerPage() {
       
       <Footer lang="tr" />
     </div>
+    </>
   );
 }
