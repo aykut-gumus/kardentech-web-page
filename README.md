@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# KardenTech Web Projesi
 
-## Getting Started
+🌐 **Canlı Proje:** https://www.kardentech.com
 
-First, run the development server:
+KardenTech Mühendislik için modern, kurumsal ve çok dilli bir web sitesi tasarlayıp geliştirdim.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Bu projede amacım, KardenTech'in mühendislik alanındaki profesyonel yaklaşımını ve hizmetlerini güçlü bir dijital deneyimle yansıtmak ve markanın dijital görünürlüğünü geliştirmekti.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Projede Neler Yaptım?
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Modern ve kurumsal bir kullanıcı arayüzü tasarladım.
+- Mobil, tablet ve masaüstü cihazlara uyumlu responsive yapı geliştirdim.
+- Türkçe, İngilizce ve Rusça olmak üzere 3 farklı dil desteği oluşturdum.
+- Hizmetler ve referans projeleri için düzenli ve kullanıcı odaklı sayfa yapıları geliştirdim.
+- Proje ve referans galerileri oluşturdum.
+- Kullanıcı deneyimini iyileştirmek için sade ve erişilebilir bir navigasyon yapısı tasarladım.
+- İletişim formu altyapısını geliştirdim.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔎 SEO ve Dijital Görünürlük
 
-## Learn More
+Projenin önemli bir bölümünü teknik SEO çalışmalarına ayırdım.
 
-To learn more about Next.js, take a look at the following resources:
+Bu kapsamda;
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Meta title ve description yapılandırmaları
+- Canonical URL yapısı
+- Hreflang desteği
+- Open Graph metadata
+- JSON-LD / Structured Data
+- XML Sitemap
+- Robots.txt
+- Favicon yapılandırması
+- 404 sayfası
+- HTTPS / WWW yönlendirme kontrolleri
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+gibi çalışmalar gerçekleştirdim.
 
-## Deploy on Vercel
+Ayrıca temel SEO kontrollerinin otomatik olarak gerçekleştirilebilmesi için `seo_smoke_test.mjs` isimli bir test scripti oluşturdum.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🛠️ Kullanılan Teknolojiler
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Lucide React
+- Node.js
+- Nodemailer
+- Git / GitHub
+
+## 🌍 Çok Dilli Yapı
+
+Web sitesi üç farklı dilde hizmet vermektedir:
+
+🇹🇷 Türkçe  
+🇬🇧 English  
+🇷🇺 Русский
+
+Dil yapısı, kullanıcı deneyiminin yanı sıra arama motorlarının farklı dil versiyonlarını doğru şekilde algılayabilmesine yönelik olarak yapılandırılmıştır.
+
+## 📱 Responsive Tasarım
+
+Web sitesi farklı ekran boyutlarında tutarlı bir kullanıcı deneyimi sunacak şekilde geliştirilmiştir.
+
+Mobil cihazlardan masaüstü ekranlara kadar farklı çözünürlüklerde tasarım ve kullanılabilirlik testleri gerçekleştirilmiştir.
+
+## 🎯 Projenin Amacı
+
+KardenTech'in mühendislik hizmetlerini ve kurumsal kimliğini modern web teknolojileri kullanarak dijital ortamda güçlü bir şekilde sunmak.
+
+Tasarım, frontend geliştirme, çoklu dil yapısı, responsive tasarım, teknik SEO ve performans optimizasyonu gibi farklı süreçleri bir arada ele alarak sürdürülebilir bir kurumsal web deneyimi oluşturmayı hedefledim.
+
+---
+
+### 🌐 KardenTech
+
+**Web Sitesi:** https://www.kardentech.com
+
+**Geliştirici:** Aykut Gümüş
+
+Bu repository, geliştirilen kurumsal web projesini teknik portföy amacıyla sergilemektedir.
+
+KardenTech markasına ait logo, görseller, metinler ve diğer kurumsal içerikler ilgili hak sahiplerine aittir.
