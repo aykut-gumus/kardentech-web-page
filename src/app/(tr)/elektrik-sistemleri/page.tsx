@@ -39,8 +39,8 @@ export default function ElektrikSistemleriPage() {
       />
 
       <ServiceItems items={[
-        { id: '1', title: 'Elektrik Proje Tasarım', image: '/images/services/elektrik/01.jpg' },
-        { id: '2', title: 'Kuvvetli Akım İşleri', image: '/images/services/elektrik/02.jpg' },
+        { id: '1', title: 'Elektrik Proje Tasarım', image: '/images/services/elektrik/02.jpg' },
+        { id: '2', title: 'Kuvvetli Akım İşleri', image: '/images/services/elektrik/01.jpg' },
         { id: '3', title: 'Aydınlatma İşleri', image: '/images/services/elektrik/03.jpg' },
         { id: '4', title: 'Zayıf Akım İşleri', image: '/images/services/elektrik/04.jpg' },
         { id: '5', title: 'Ev Otomasyonu', image: '/images/services/elektrik/05.jpg' },
