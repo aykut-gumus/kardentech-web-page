@@ -1,6 +1,7 @@
 import { getLocalizedMetadata } from '@/i18n/metadata';
 import ServicesHero from '@/components/services/ServicesHero';
 import ServiceIntro from '@/components/services/ServiceIntro';
+import InceIslerGallery from '@/components/services/InceIslerGallery';
 import ServicesCTA from '@/components/services/ServicesCTA';
 import Footer from '@/components/Footer';
 import JsonLd from '@/components/JsonLd';
@@ -36,6 +37,8 @@ export default function InceIslerPage() {
           "İnce İşler, web sitesindeki hizmet sınıflandırması kapsamında bu faaliyetlerle ilişkili proje deneyimlerini bir araya getirmektedir."
         ]}
       />
+
+      <InceIslerGallery />
 
       <ServicesCTA lang="tr" />
       
