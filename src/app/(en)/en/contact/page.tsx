@@ -13,7 +13,7 @@ export default function ContactPageEN() {
   return (
     <>
       <JsonLd data={[
-        getLocalBusinessSchema(),
+        getLocalBusinessSchema('en'),
         getBreadcrumbSchema([{ name: 'Contact', item: '/en/contact' }])
       ]} />
       <div className="flex flex-col min-h-full bg-[var(--color-white)] w-full overflow-x-hidden">

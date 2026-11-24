@@ -1,10 +1,9 @@
 import { MetadataRoute } from 'next';
 import { routeMap } from '@/i18n/routes';
 import { projects } from '@/data/projects';
+import { toAbsoluteUrl } from '@/lib/site';
 
 export const dynamic = 'force-static';
-
-const siteUrl = 'https://www.kardentech.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes: MetadataRoute.Sitemap = [];
@@ -17,7 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       const path = routeMap[pageId]?.[locale];
       if (path && typeof path === 'string') {
         routes.push({
-          url: `${siteUrl}${path}`,
+          url: toAbsoluteUrl(path),
         });
       }
     }
@@ -27,13 +26,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const project of projects) {
     if (project.slug) {
       routes.push({
-        url: `${siteUrl}/referanslar/${project.slug}`,
+        url: toAbsoluteUrl(`/referanslar/${project.slug}`),
       });
       routes.push({
-        url: `${siteUrl}/en/references/${project.slug}`,
+        url: toAbsoluteUrl(`/en/references/${project.slug}`),
       });
       routes.push({
-        url: `${siteUrl}/ru/references/${project.slug}`,
+        url: toAbsoluteUrl(`/ru/references/${project.slug}`),
       });
     }
   }

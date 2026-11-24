@@ -5,6 +5,8 @@ import ExpertiseList from '@/components/about/ExpertiseList';
 
 import AboutCTA from '@/components/about/AboutCTA';
 import Footer from '@/components/Footer';
+import JsonLd from '@/components/JsonLd';
+import { getBreadcrumbSchema } from '@/lib/json-ld';
 
 export function generateMetadata() {
   return getLocalizedMetadata({ locale: 'ru', pageId: 'about' });
@@ -13,6 +15,7 @@ export function generateMetadata() {
 export default function AboutPageRU() {
   return (
     <div className="flex flex-col min-h-full bg-[var(--color-white)] w-full overflow-x-hidden">
+      <JsonLd data={[getBreadcrumbSchema([{ name: 'О компании', item: '/ru/about' }])]} />
       <AboutHero lang="ru" />
       <AboutIntro lang="ru" />
       <ExpertiseList lang="ru" />

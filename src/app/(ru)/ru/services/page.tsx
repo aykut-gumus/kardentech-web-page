@@ -3,6 +3,8 @@ import ServicesHero from '@/components/services/ServicesHero';
 import ServiceDisciplines from '@/components/services/ServiceDisciplines';
 import ServicesCTA from '@/components/services/ServicesCTA';
 import Footer from '@/components/Footer';
+import JsonLd from '@/components/JsonLd';
+import { getBreadcrumbSchema } from '@/lib/json-ld';
 
 export function generateMetadata() {
   return getLocalizedMetadata({ locale: 'ru', pageId: 'services' });
@@ -17,6 +19,7 @@ export default function ServicesPageRU() {
 
   return (
     <div className="flex flex-col min-h-full bg-[var(--color-white)] w-full overflow-x-hidden">
+      <JsonLd data={[getBreadcrumbSchema([{ name: 'Услуги', item: '/ru/services' }])]} />
       <ServicesHero 
         lang="ru"
         pageId="services"

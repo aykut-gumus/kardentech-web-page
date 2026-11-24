@@ -30,6 +30,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     dynamicSlug: project.slug,
     dynamicTitle: `${project.title.ru} | KardenTech Mühendislik`,
     dynamicDesc: project.summary?.ru || `Технические детали проекта ${project.title.ru}.`,
+    dynamicImage: project.coverImage,
   });
 }
 

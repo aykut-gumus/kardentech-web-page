@@ -1,6 +1,6 @@
 # KardenTech Web Projesi
 
-🌐 **Canlı Proje:** https://www.kardentech.com
+🌐 **Canlı Proje:** https://www.kardentech.com.tr
 
 KardenTech Mühendislik için modern, kurumsal ve çok dilli bir web sitesi tasarlayıp geliştirdim.
 
@@ -74,7 +74,7 @@ Tasarım, frontend geliştirme, çoklu dil yapısı, responsive tasarım, teknik
 
 ### 🌐 KardenTech
 
-**Web Sitesi:** https://www.kardentech.com
+**Web Sitesi:** https://www.kardentech.com.tr
 
 **Geliştirici:** Aykut Gümüş
 

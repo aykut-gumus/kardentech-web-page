@@ -1,9 +1,7 @@
 import { Metadata } from 'next';
 import { Locale } from './types';
 import { routeMap } from './routes';
-
-// Base URL of the application
-const siteUrl = 'https://www.kardentech.com';
+import { DEFAULT_OG_IMAGE, toAbsoluteUrl, toAssetUrl } from '@/lib/site';
 
 type PageId = keyof typeof routeMap | 'dynamic-reference';
 
@@ -13,6 +11,19 @@ type MetadataProps = {
   dynamicTitle?: string;
   dynamicDesc?: string;
   dynamicSlug?: string;
+  dynamicImage?: string;
+};
+
+const ogLocaleMap: Record<Locale, string> = {
+  tr: 'tr_TR',
+  en: 'en_US',
+  ru: 'ru_RU',
+};
+
+const siteNameMap: Record<Locale, string> = {
+  tr: 'KardenTech Mühendislik',
+  en: 'KardenTech Engineering',
+  ru: 'KardenTech Инжиниринг',
 };
 
 type SeoData = {
@@ -82,6 +93,7 @@ export const getLocalizedMetadata = ({
   dynamicTitle,
   dynamicDesc,
   dynamicSlug,
+  dynamicImage,
 }: MetadataProps): Metadata => {
   let title = '';
   let description = '';
@@ -109,7 +121,11 @@ export const getLocalizedMetadata = ({
   }
 
   const currentPath = locale === 'tr' ? trPath : (locale === 'en' ? enPath : ruPath);
-  const canonicalUrl = `${siteUrl}${currentPath}`;
+  const canonicalUrl = toAbsoluteUrl(currentPath);
+  const ogImageUrl = toAssetUrl(dynamicImage || DEFAULT_OG_IMAGE);
+  const alternateLocales = (['tr', 'en', 'ru'] as const)
+    .filter((l) => l !== locale)
+    .map((l) => ogLocaleMap[l]);
 
   return {
     title,
@@ -117,11 +133,32 @@ export const getLocalizedMetadata = ({
     alternates: {
       canonical: canonicalUrl,
       languages: {
-        'tr': `${siteUrl}${trPath}`,
-        'en': `${siteUrl}${enPath}`,
-        'ru': `${siteUrl}${ruPath}`,
-        'x-default': `${siteUrl}${trPath}`,
+        'tr': toAbsoluteUrl(trPath),
+        'en': toAbsoluteUrl(enPath),
+        'ru': toAbsoluteUrl(ruPath),
+        'x-default': toAbsoluteUrl(trPath),
       },
+    },
+    openGraph: {
+      type: 'website',
+      locale: ogLocaleMap[locale],
+      alternateLocale: alternateLocales,
+      url: canonicalUrl,
+      siteName: siteNameMap[locale],
+      title,
+      description,
+      images: [
+        {
+          url: ogImageUrl,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [ogImageUrl],
     },
   };
 };

@@ -13,7 +13,7 @@ export default function ContactPageRU() {
   return (
     <>
       <JsonLd data={[
-        getLocalBusinessSchema(),
+        getLocalBusinessSchema('ru'),
         getBreadcrumbSchema([{ name: 'Контакты', item: '/ru/contact' }])
       ]} />
       <div className="flex flex-col min-h-full bg-[var(--color-white)] w-full overflow-x-hidden">
